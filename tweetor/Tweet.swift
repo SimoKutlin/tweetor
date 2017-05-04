@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-final class Tweet: NSObject {
+final class Tweet: NSObject, ResponseCollectionConvertible, ResponseConvertible {
     
     var identifier: String = ""
     var text: String = ""
@@ -17,28 +18,22 @@ final class Tweet: NSObject {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     
-    static func collection(_ responseData: Array<Dictionary<String, Any>>) -> [Tweet] {
-        print("locating \(responseData)")
+    static func collection(_ responseData: JSON) -> [Tweet] {
         var tweets = Array<Tweet>()
-        for tweetData in responseData {
+        for (_,tweetData):(String,JSON) in responseData {
             tweets += [Tweet(responseData: tweetData)]
         }
         return tweets
     }
     
-    init(responseData: Dictionary<String, Any>) {
-        identifier = responseData["id_str"] as? String ?? ""
-        text = responseData["text"] as? String ?? ""
+    init(responseData: JSON) {
+        identifier = responseData["id_str"].string ?? ""
+        text = responseData["text"].string ?? ""
         
-        if let userData = responseData["user"] as? Dictionary<String, Any> {
-            user = User(userData: userData)
-        }
+        user = User(userData: responseData["user"])
         
-        if let geoData = responseData["geo"] as? Dictionary<String, Any>,
-            let coordinates = geoData["coordinates"] as? Dictionary<Int, Double> {
-            latitude = Double(coordinates[0]!)
-            longitude = Double(coordinates[1]!)
-        }
+        latitude = responseData["geo"]["coordinates"][0].double!
+        longitude = responseData["geo"]["coordinates"][1].double!
         
     }
 }
