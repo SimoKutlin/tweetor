@@ -4,4 +4,5 @@ use_frameworks!
 target 'tweetor' do
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON', '~> 3.1'
+  pod 'TwitterAPI', '~> 0.4'
 end
