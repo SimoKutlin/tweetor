@@ -10,7 +10,6 @@
 		4DA385A0B816AA60DB40AD69 /* Pods_tweetor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54603881D1963AA102AE5550 /* Pods_tweetor.framework */; };
 		843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437071EBBAE6500A957C9 /* TwitterManager.swift */; };
 		8434370A1EBBB89E00A957C9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437091EBBB89E00A957C9 /* NetworkManager.swift */; };
-		843437111EBBB9BA00A957C9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8434370F1EBBB9BA00A957C9 /* DataModel.xcdatamodeld */; };
 		843437131EBBBA3D00A957C9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437121EBBBA3D00A957C9 /* Tweet.swift */; };
 		843437151EBBBC9B00A957C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437141EBBBC9B00A957C9 /* User.swift */; };
 		8476E6F01EBA8CD500B78425 /* settings-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 8476E6EF1EBA8CD500B78425 /* settings-filled.png */; };
@@ -35,7 +34,6 @@
 		54603881D1963AA102AE5550 /* Pods_tweetor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tweetor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		843437071EBBAE6500A957C9 /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
 		843437091EBBB89E00A957C9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		843437101EBBB9BA00A957C9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		843437121EBBBA3D00A957C9 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		843437141EBBBC9B00A957C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8476E6EF1EBA8CD500B78425 /* settings-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-filled.png"; path = "Assets.xcassets/settings-filled.png"; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 		8434370B1EBBB97600A957C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8434370F1EBBB9BA00A957C9 /* DataModel.xcdatamodeld */,
 				843437121EBBBA3D00A957C9 /* Tweet.swift */,
 				843437141EBBBC9B00A957C9 /* User.swift */,
 			);
@@ -294,7 +291,6 @@
 				843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */,
 				8434370A1EBBB89E00A957C9 /* NetworkManager.swift in Sources */,
 				84CCAD011EBA5CE90007BFE6 /* tweetor.xcdatamodeld in Sources */,
-				843437111EBBB9BA00A957C9 /* DataModel.xcdatamodeld in Sources */,
 				84CCACF91EBA5CE90007BFE6 /* AppDelegate.swift in Sources */,
 				8476E6F21EBA8DDC00B78425 /* SettingsViewController.swift in Sources */,
 				843437151EBBBC9B00A957C9 /* User.swift in Sources */,
@@ -460,16 +456,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8434370F1EBBB9BA00A957C9 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				843437101EBBB9BA00A957C9 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 843437101EBBB9BA00A957C9 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		84CCACFF1EBA5CE90007BFE6 /* tweetor.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
