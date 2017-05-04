@@ -46,6 +46,12 @@ class SearchViewController: UIViewController {
             switch identifier {
             case "SettingsSegue":
                 _ = segue.destination as? SettingsViewController
+            
+            case "ShowSearchResultSegue":
+                if let seguedToMVC = segue.destination as? TweetTableViewController {
+                    seguedToMVC.tweets = self.tweets
+                }
+                
                 
             default: break
             }
