@@ -17,7 +17,6 @@
 		8476E6F01EBA8CD500B78425 /* settings-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 8476E6EF1EBA8CD500B78425 /* settings-filled.png */; };
 		8476E6F21EBA8DDC00B78425 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */; };
 		84CCACF91EBA5CE90007BFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCACF81EBA5CE90007BFE6 /* AppDelegate.swift */; };
-		84CCACFB1EBA5CE90007BFE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCACFA1EBA5CE90007BFE6 /* ViewController.swift */; };
 		84CCACFE1EBA5CE90007BFE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CCACFC1EBA5CE90007BFE6 /* Main.storyboard */; };
 		84CCAD011EBA5CE90007BFE6 /* tweetor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84CCACFF1EBA5CE90007BFE6 /* tweetor.xcdatamodeld */; };
 		84CCAD031EBA5CE90007BFE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CCAD021EBA5CE90007BFE6 /* Assets.xcassets */; };
@@ -43,7 +42,6 @@
 		8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84CCACF51EBA5CE90007BFE6 /* tweetor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweetor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CCACF81EBA5CE90007BFE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84CCACFA1EBA5CE90007BFE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84CCACFD1EBA5CE90007BFE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84CCAD001EBA5CE90007BFE6 /* tweetor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tweetor.xcdatamodel; sourceTree = "<group>"; };
 		84CCAD021EBA5CE90007BFE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */,
 				84CCACFC1EBA5CE90007BFE6 /* Main.storyboard */,
 				84CCACF81EBA5CE90007BFE6 /* AppDelegate.swift */,
-				84CCACFA1EBA5CE90007BFE6 /* ViewController.swift */,
 				84CCAD021EBA5CE90007BFE6 /* Assets.xcassets */,
 				84CCAD071EBA5CE90007BFE6 /* Info.plist */,
 				84CCACFF1EBA5CE90007BFE6 /* tweetor.xcdatamodeld */,
@@ -306,7 +303,6 @@
 				84ECBC461EBA8387009CED47 /* SearchViewController.swift in Sources */,
 				843437131EBBBA3D00A957C9 /* Tweet.swift in Sources */,
 				843826371EBBE997005C8021 /* TweetTableViewController.swift in Sources */,
-				84CCACFB1EBA5CE90007BFE6 /* ViewController.swift in Sources */,
 				843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */,
 				84CCAD011EBA5CE90007BFE6 /* tweetor.xcdatamodeld in Sources */,
 				84CCACF91EBA5CE90007BFE6 /* AppDelegate.swift in Sources */,

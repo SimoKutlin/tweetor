@@ -22,6 +22,7 @@ class TweetTableViewController: UITableViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: "TweetResultCell")
     }
 
     override func didReceiveMemoryWarning() {

@@ -20,21 +20,5 @@ class SettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func logoutClicked(_ sender: UIButton) {
-        //TODO logout user
-        print("logged out!")
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            switch identifier {
-            case "LogoutSegue":
-                _ = segue.destination as? LoginViewController
-                
-            default: break
-            }
-        }
-    }
 
 }
