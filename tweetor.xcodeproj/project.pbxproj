@@ -22,7 +22,6 @@
 		84CCAD011EBA5CE90007BFE6 /* tweetor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84CCACFF1EBA5CE90007BFE6 /* tweetor.xcdatamodeld */; };
 		84CCAD031EBA5CE90007BFE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CCAD021EBA5CE90007BFE6 /* Assets.xcassets */; };
 		84CCAD0F1EBA5E780007BFE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CCAD0E1EBA5E780007BFE6 /* MapKit.framework */; };
-		84CCAD111EBA63430007BFE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCAD101EBA63430007BFE6 /* LoginViewController.swift */; };
 		84ECBC421EBA71C0009CED47 /* twitter-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECBC411EBA71C0009CED47 /* twitter-64.png */; };
 		84ECBC441EBA8115009CED47 /* twitter-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECBC431EBA8115009CED47 /* twitter-128.png */; };
 		84ECBC461EBA8387009CED47 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECBC451EBA8387009CED47 /* SearchViewController.swift */; };
@@ -50,7 +49,6 @@
 		84CCAD021EBA5CE90007BFE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CCAD071EBA5CE90007BFE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CCAD0E1EBA5E780007BFE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		84CCAD101EBA63430007BFE6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84ECBC411EBA71C0009CED47 /* twitter-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-64.png"; path = "Assets.xcassets/twitter-64.png"; sourceTree = "<group>"; };
 		84ECBC431EBA8115009CED47 /* twitter-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-128.png"; path = "Assets.xcassets/twitter-128.png"; sourceTree = "<group>"; };
 		84ECBC451EBA8387009CED47 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				843826321EBBDCAA005C8021 /* Deserializer */,
 				8434370B1EBBB97600A957C9 /* Model */,
 				843437061EBBAE4D00A957C9 /* Network */,
-				84CCAD101EBA63430007BFE6 /* LoginViewController.swift */,
 				84ECBC451EBA8387009CED47 /* SearchViewController.swift */,
 				8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */,
 				84CCACFC1EBA5CE90007BFE6 /* Main.storyboard */,
@@ -308,7 +305,6 @@
 			files = (
 				84ECBC461EBA8387009CED47 /* SearchViewController.swift in Sources */,
 				843437131EBBBA3D00A957C9 /* Tweet.swift in Sources */,
-				84CCAD111EBA63430007BFE6 /* LoginViewController.swift in Sources */,
 				843826371EBBE997005C8021 /* TweetTableViewController.swift in Sources */,
 				84CCACFB1EBA5CE90007BFE6 /* ViewController.swift in Sources */,
 				843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */,

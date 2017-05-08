@@ -27,12 +27,13 @@ class SearchViewController: UIViewController {
                     self.tweets.insert(tweet, at: index)
                     index += 1
                 }
+                print("got \(self.tweets.count) tweets")
             }
         }
         
     }
     @IBAction func searchTriggered(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "ShowSearchResultSegue", sender: Any?.self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +48,7 @@ class SearchViewController: UIViewController {
             case "SettingsSegue":
                 _ = segue.destination as? SettingsViewController
             
-            case "ShowSearchResultSegue":
+            case "SearchResultSegue":
                 if let seguedToMVC = segue.destination as? TweetTableViewController {
                     seguedToMVC.tweets = self.tweets
                 }
