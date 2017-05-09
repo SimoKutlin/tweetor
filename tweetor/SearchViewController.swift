@@ -28,6 +28,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // empty current tweets
+        self.tweets.removeAll()
+        
         if let searchTerm: String = searchBar.text {
             print("searching for \(searchTerm)")
             
@@ -42,14 +45,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                     } else {
-                        var index: Int = 0
                         for tweet in tweets {
-                            self.tweets.insert(tweet, at: index)
-                            index += 1
+                            self.tweets += [tweet]
                         }
                         print("got \(self.tweets.count) tweets")
                         
-                        let searchResultController: TweetTableViewController = TweetTableViewController()
+                        //let searchResultController: TweetTableViewController = TweetTableViewController()
+                        let searchResultController: TweetMapViewController = TweetMapViewController()
                         searchResultController.tweets = self.tweets
                         self.navigationController?.pushViewController(searchResultController, animated: true)
                     }
