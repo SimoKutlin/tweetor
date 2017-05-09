@@ -149,41 +149,41 @@
             <point key="canvasLocation" x="2701.5999999999999" y="138.98050974512745"/>
         </scene>
         <!--Results-->
-        <scene sceneID="8s0-fc-353">
+        <scene sceneID="tKa-Cf-e3Y">
             <objects>
-                <tableViewController id="YoX-dA-rSg" customClass="TweetTableViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="196" sectionHeaderHeight="28" sectionFooterHeight="28" id="tMF-A1-aw7">
+                <tableViewController id="1lC-jP-UZR" customClass="TweetTableViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" id="tF8-Y4-coT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetResultCell" rowHeight="196" id="lvR-ow-K5I" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="196"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="176" id="l6K-GD-Y8W" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="176"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lvR-ow-K5I" id="Ekm-9u-eCf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6K-GD-Y8W" id="03t-fH-dc9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cha-MM-vqA">
-                                            <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1k6-tk-WOa">
+                                            <rect key="frame" x="8" y="8" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FullName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHX-Lj-JKb">
-                                            <rect key="frame" x="72" y="8" width="295" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fullname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-hg-ELr">
+                                            <rect key="frame" x="66" y="8" width="301" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwS-px-dft">
-                                            <rect key="frame" x="72" y="35" width="295" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-Kx-NDD">
+                                            <rect key="frame" x="66" y="37" width="301" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Krj-6d-kNC">
-                                            <rect key="frame" x="11" y="64" width="356" height="131"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9t-nQ-P7x">
+                                            <rect key="frame" x="8" y="66" width="359" height="101"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -192,23 +192,92 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="fullnameLabel" destination="CHX-Lj-JKb" id="ChM-5m-87q"/>
-                                    <outlet property="tweetLabel" destination="Krj-6d-kNC" id="qke-xR-h7y"/>
-                                    <outlet property="userThumbnail" destination="cha-MM-vqA" id="Gan-CJ-tqS"/>
-                                    <outlet property="usernameLabel" destination="AwS-px-dft" id="Uio-ww-6Gz"/>
+                                    <outlet property="fullnameLabel" destination="5zE-hg-ELr" id="Gwh-Ah-coy"/>
+                                    <outlet property="tweetLabel" destination="g9t-nQ-P7x" id="U3X-OW-SYG"/>
+                                    <outlet property="userThumbnail" destination="1k6-tk-WOa" id="19R-8d-oXL"/>
+                                    <outlet property="usernameLabel" destination="KkQ-Kx-NDD" id="M1R-vn-fdD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="YoX-dA-rSg" id="hgf-fz-BdH"/>
-                            <outlet property="delegate" destination="YoX-dA-rSg" id="ubZ-gS-viV"/>
+                            <outlet property="dataSource" destination="1lC-jP-UZR" id="suP-7n-DGX"/>
+                            <outlet property="delegate" destination="1lC-jP-UZR" id="xSW-42-SNm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Results" id="VbO-Tl-7Ev"/>
+                    <navigationItem key="navigationItem" title="Results" id="WIR-Oz-KlG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="K6g-RS-Fb1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o7Y-bv-wxc">
+                                <rect key="frame" x="329" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="mappinned-filled.png"/>
+                            </button>
+                            <connections>
+                                <segue destination="6uB-xQ-YR7" kind="show" identifier="ShowTweetMap" id="RTI-xH-IKW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sti-Cl-dfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1h2-rg-qqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4512.8000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="4968.8000000000002" y="129.98500749625188"/>
+        </scene>
+        <!--Resultmap-->
+        <scene sceneID="8KC-Qn-2YY">
+            <objects>
+                <viewController id="6uB-xQ-YR7" customClass="TweetMapViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3sI-7j-nWc"/>
+                        <viewControllerLayoutGuide type="bottom" id="fFN-NY-WZ4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gDQ-fq-HS5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Gd-sO-BmC">
+                                <rect key="frame" x="16" y="81" width="343" height="566"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Resultmap" id="Bro-bA-mTy"/>
+                    <connections>
+                        <outlet property="resultMap" destination="3Gd-sO-BmC" id="KzT-xW-suc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGM-6c-1XS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5452" y="-652.62368815592208"/>
+        </scene>
+        <!--Tweet Detail View Controller-->
+        <scene sceneID="TWV-wJ-SG5">
+            <objects>
+                <viewController id="MYC-i5-eZ3" customClass="TweetDetailViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pdS-RW-rKi"/>
+                        <viewControllerLayoutGuide type="bottom" id="zIL-IQ-LGJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vVK-1p-RKE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-4n-VSW">
+                                <rect key="frame" x="84" y="73" width="220" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tweetTextLabel" destination="RNk-4n-VSW" id="eYc-PS-sxn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Al4-G6-4Ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6375.1999999999998" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nJb-Cu-NAt">
@@ -229,26 +298,27 @@
             <point key="canvasLocation" x="1897" y="139"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="pWp-3v-t5o">
+        <scene sceneID="ArV-qq-xtW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sU0-Ew-2Qk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7cR-p3-DER" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjB-9c-bHh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RW2-cU-s0B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="YoX-dA-rSg" kind="relationship" relationship="rootViewController" id="mGa-c2-ELt"/>
+                        <segue destination="1lC-jP-UZR" kind="relationship" relationship="rootViewController" id="M0i-ya-AoR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W90-lD-xH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQo-7q-prG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3573.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="4029.5999999999999" y="129.98500749625188"/>
         </scene>
     </scenes>
     <resources>
         <image name="gps-filled.png" width="50" height="50"/>
+        <image name="mappinned-filled.png" width="50" height="50"/>
         <image name="marker-filled.png" width="50" height="50"/>
         <image name="settings-filled.png" width="25" height="25"/>
         <image name="star-filled.png" width="50" height="50"/>
