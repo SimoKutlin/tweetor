@@ -11,6 +11,8 @@
 		84201D9A1EC1149100F04FD6 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84201D991EC1149100F04FD6 /* TweetDetailViewController.swift */; };
 		84201D9C1EC2288600F04FD6 /* TweetMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84201D9B1EC2288600F04FD6 /* TweetMapViewController.swift */; };
 		84201D9E1EC2295200F04FD6 /* mappinned-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 84201D9D1EC2295200F04FD6 /* mappinned-filled.png */; };
+		843124001EC39D8500218CBB /* PickPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843123FF1EC39D8500218CBB /* PickPlaceViewController.swift */; };
+		843124021EC39DA100218CBB /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843124011EC39DA100218CBB /* PlacesViewController.swift */; };
 		843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437071EBBAE6500A957C9 /* TwitterManager.swift */; };
 		843437131EBBBA3D00A957C9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437121EBBBA3D00A957C9 /* Tweet.swift */; };
 		843437151EBBBC9B00A957C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437141EBBBC9B00A957C9 /* User.swift */; };
@@ -39,6 +41,8 @@
 		84201D991EC1149100F04FD6 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		84201D9B1EC2288600F04FD6 /* TweetMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetMapViewController.swift; sourceTree = "<group>"; };
 		84201D9D1EC2295200F04FD6 /* mappinned-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mappinned-filled.png"; path = "Assets.xcassets/mappinned-filled.png"; sourceTree = "<group>"; };
+		843123FF1EC39D8500218CBB /* PickPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickPlaceViewController.swift; sourceTree = "<group>"; };
+		843124011EC39DA100218CBB /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		843437071EBBAE6500A957C9 /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
 		843437121EBBBA3D00A957C9 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		843437141EBBBC9B00A957C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 				84201D991EC1149100F04FD6 /* TweetDetailViewController.swift */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		843123FE1EC39D5F00218CBB /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				843123FF1EC39D8500218CBB /* PickPlaceViewController.swift */,
+				843124011EC39DA100218CBB /* PlacesViewController.swift */,
+			);
+			name = Places;
 			sourceTree = "<group>";
 		};
 		843437061EBBAE4D00A957C9 /* Network */ = {
@@ -142,6 +155,7 @@
 		84CCACF71EBA5CE90007BFE6 /* tweetor */ = {
 			isa = PBXGroup;
 			children = (
+				843123FE1EC39D5F00218CBB /* Places */,
 				84201D971EC1146100F04FD6 /* Detail */,
 				843826351EBBE96B005C8021 /* SearchResult */,
 				843826321EBBDCAA005C8021 /* Deserializer */,
@@ -326,12 +340,14 @@
 				84201D9A1EC1149100F04FD6 /* TweetDetailViewController.swift in Sources */,
 				843826371EBBE997005C8021 /* TweetTableViewController.swift in Sources */,
 				843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */,
+				843124001EC39D8500218CBB /* PickPlaceViewController.swift in Sources */,
 				847170251EC24ABA00CF0954 /* TweetAnnotation.swift in Sources */,
 				84201D9C1EC2288600F04FD6 /* TweetMapViewController.swift in Sources */,
 				84CCAD011EBA5CE90007BFE6 /* tweetor.xcdatamodeld in Sources */,
 				84CCACF91EBA5CE90007BFE6 /* AppDelegate.swift in Sources */,
 				8476E6F21EBA8DDC00B78425 /* SettingsViewController.swift in Sources */,
 				843826341EBBDCBE005C8021 /* TwitterDeserializer.swift in Sources */,
+				843124021EC39DA100218CBB /* PlacesViewController.swift in Sources */,
 				843437151EBBBC9B00A957C9 /* User.swift in Sources */,
 				843826391EBBE9BF005C8021 /* TweetTableViewCell.swift in Sources */,
 			);

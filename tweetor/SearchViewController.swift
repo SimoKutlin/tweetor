@@ -50,8 +50,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         }
                         print("got \(self.tweets.count) tweets")
                         
-                        //let searchResultController: TweetTableViewController = TweetTableViewController()
-                        let searchResultController: TweetMapViewController = TweetMapViewController()
+                        let searchResultController: TweetTableViewController = TweetTableViewController()
+                        //let searchResultController: TweetMapViewController = TweetMapViewController()
                         searchResultController.tweets = self.tweets
                         self.navigationController?.pushViewController(searchResultController, animated: true)
                     }
