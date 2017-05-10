@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
+  - FontAwesome.swift (1.1.1)
   - MutableDataScanner (1.1.0)
   - OAuthSwift (1.0.0)
   - SwiftyJSON (3.1.4)
@@ -9,16 +10,18 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - FontAwesome.swift (~> 1.1)
   - SwiftyJSON (~> 3.1)
   - TwitterAPI (~> 0.4)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  FontAwesome.swift: f4ff5a9199dc3b510eba5bb377e834f159aef358
   MutableDataScanner: 07330dfa3b4ec383f342e25d2b1e8697f85a3894
   OAuthSwift: dd4f502ffd4f6e122b861b5e4529bf6454a30fe6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TwitterAPI: 092e249cc69fbb9b955940766d42da01573d688f
 
-PODFILE CHECKSUM: a0556c1272fb749a17ae58e5fac9b05cfe0d31f0
+PODFILE CHECKSUM: 52acdf7251f21f864b1631fc9b4b992d20f68a8e
 
 COCOAPODS: 1.2.1
