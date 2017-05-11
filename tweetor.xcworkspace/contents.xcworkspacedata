@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Munich.gpx">
+   </FileRef>
+   <FileRef
       location = "group:tweetor.xcodeproj">
    </FileRef>
    <FileRef
