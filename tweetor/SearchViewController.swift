@@ -6,6 +6,8 @@
 //  Copyright © 2017 spp. All rights reserved.
 //
 
+import FontAwesome_swift
+import MapKit
 import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
@@ -16,6 +18,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var distanceLabel: UILabel!
     
     var tweets = [Tweet]()
+    
+    var searchLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0) { didSet { print("set to \(searchLocation)") } }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +79,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             case "SettingsSegue":
                 _ = segue.destination as? SettingsViewController
                 
+            case "CustomPlaceSegue":
+                _ = segue.destination as? CustomPlaceViewController
+                
+            case "SavedPlacesSegue":
+                _ = segue.destination as? SavedPlacesViewController
+    
             default: break
             }
         }

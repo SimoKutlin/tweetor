@@ -66,7 +66,7 @@
         <!--Pick location-->
         <scene sceneID="zj9-S4-cgg">
             <objects>
-                <viewController id="ul2-Qn-M6F" customClass="PickPlaceViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ul2-Qn-M6F" customClass="CustomPlaceViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qOV-bz-ITT"/>
                         <viewControllerLayoutGuide type="bottom" id="m4C-U6-fZM"/>
@@ -110,12 +110,22 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec8-fU-Ji1">
                                 <rect key="frame" x="329" y="568" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Fav"/>
+                                <state key="normal" title="Fav">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToFavourites:" destination="ul2-Qn-M6F" eventType="touchUpInside" id="38v-PW-zwa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHP-vw-YtM">
                                 <rect key="frame" x="329" y="617" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="h82-gw-Ahp" kind="show" identifier="SetLocation" id="oRo-rt-OQy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,25 +190,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fny-Eq-wim">
-                                <rect key="frame" x="162" y="99" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="star-filled.png"/>
-                                <connections>
-                                    <segue destination="cD9-hv-TqM" kind="show" id="e9C-SB-xnO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-y5-L1p">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQg-W7-Mqz">
                                 <rect key="frame" x="64" y="99" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="gps-filled.png"/>
+                                <state key="normal" title="Button" image="gps-filled"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bk-SZ-3Ki">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-nQ-wTz">
+                                <rect key="frame" x="162" y="99" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="star-filled"/>
+                                <connections>
+                                    <segue destination="cD9-hv-TqM" kind="show" id="h4g-SM-5dN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUn-Pm-kVs">
                                 <rect key="frame" x="260" y="99" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="marker-filled.png"/>
+                                <state key="normal" title="Button" image="marker-filled"/>
                                 <connections>
-                                    <segue destination="ul2-Qn-M6F" kind="show" id="irY-0y-1gk"/>
+                                    <segue destination="ul2-Qn-M6F" kind="show" id="tQc-13-aOf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -229,21 +239,42 @@
         <!--Saved locations-->
         <scene sceneID="Xvq-RU-JLf">
             <objects>
-                <tableViewController id="cD9-hv-TqM" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z3U-MV-nKA">
+                <tableViewController id="cD9-hv-TqM" customClass="SavedPlacesViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z3U-MV-nKA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" editingAccessoryType="detailDisclosureButton" id="7Sg-U7-EOh">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedPlaceCell" rowHeight="105" id="7Sg-U7-EOh" customClass="SavedPlaceViewController" customModule="tweetor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Sg-U7-EOh" id="67U-6c-B65">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placename" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVU-0N-pR9">
-                                            <rect key="frame" x="8" y="11" width="336" height="21"/>
+                                            <rect key="frame" x="8" y="11" width="326" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s61-Jk-20B">
+                                            <rect key="frame" x="8" y="40" width="326" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ZIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeD-3r-0r3">
+                                            <rect key="frame" x="8" y="69" width="90" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg4-Kv-5b5">
+                                            <rect key="frame" x="104" y="69" width="230" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -251,6 +282,13 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityLabel" destination="jg4-Kv-5b5" id="7F1-Yx-E3x"/>
+                                    <outlet property="nameLabel" destination="KVU-0N-pR9" id="Off-SL-DQg"/>
+                                    <outlet property="streetLabel" destination="s61-Jk-20B" id="eSd-ao-ZJv"/>
+                                    <outlet property="zipLabel" destination="CeD-3r-0r3" id="5Dd-Ch-zOn"/>
+                                    <segue destination="h82-gw-Ahp" kind="show" identifier="SetLocation" id="zJb-6E-Yny"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -273,7 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="127" id="l6K-GD-Y8W" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetResultCell" rowHeight="127" id="l6K-GD-Y8W" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="127"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6K-GD-Y8W" id="03t-fH-dc9">
@@ -474,11 +512,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gps-filled.png" width="50" height="50"/>
+        <image name="gps-filled" width="50" height="50"/>
         <image name="mappinned-filled" width="50" height="50"/>
-        <image name="marker-filled.png" width="50" height="50"/>
+        <image name="marker-filled" width="50" height="50"/>
         <image name="settings-filled.png" width="25" height="25"/>
-        <image name="star-filled.png" width="50" height="50"/>
+        <image name="star-filled" width="50" height="50"/>
         <image name="twitter-128.png" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oRo-rt-OQy"/>
+    </inferredMetricsTieBreakers>
 </document>
