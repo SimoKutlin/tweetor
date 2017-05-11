@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
     
+    // UI Elements
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var distanceSlider: UISlider!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -20,6 +21,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         searchBar.delegate = self
         
+        // Initialize distance label
         sliderValueChanged(distanceSlider)
     }
     

@@ -25,10 +25,7 @@ class TweetTableViewController: UITableViewController {
         tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: "TweetResultCell")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 
     // MARK: - Table view data source
 
@@ -69,5 +66,10 @@ class TweetTableViewController: UITableViewController {
         }
     }
     
+    // other stuff xcode gave me
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
 }

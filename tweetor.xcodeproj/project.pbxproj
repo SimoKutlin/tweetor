@@ -11,15 +11,16 @@
 		84201D9A1EC1149100F04FD6 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84201D991EC1149100F04FD6 /* TweetDetailViewController.swift */; };
 		84201D9C1EC2288600F04FD6 /* TweetMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84201D9B1EC2288600F04FD6 /* TweetMapViewController.swift */; };
 		84201D9E1EC2295200F04FD6 /* mappinned-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 84201D9D1EC2295200F04FD6 /* mappinned-filled.png */; };
-		843124021EC39DA100218CBB /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843124011EC39DA100218CBB /* PlacesViewController.swift */; };
 		843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437071EBBAE6500A957C9 /* TwitterManager.swift */; };
 		843437131EBBBA3D00A957C9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437121EBBBA3D00A957C9 /* Tweet.swift */; };
 		843437151EBBBC9B00A957C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437141EBBBC9B00A957C9 /* User.swift */; };
 		843826341EBBDCBE005C8021 /* TwitterDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843826331EBBDCBE005C8021 /* TwitterDeserializer.swift */; };
 		843826371EBBE997005C8021 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843826361EBBE997005C8021 /* TweetTableViewController.swift */; };
 		843826391EBBE9BF005C8021 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843826381EBBE9BF005C8021 /* TweetTableViewCell.swift */; };
-		84681FF01EC3C2AE004F667D /* PickPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84681FEF1EC3C2AE004F667D /* PickPlaceViewController.swift */; };
+		84681FF01EC3C2AE004F667D /* CustomPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84681FEF1EC3C2AE004F667D /* CustomPlaceViewController.swift */; };
 		847170251EC24ABA00CF0954 /* TweetAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847170241EC24ABA00CF0954 /* TweetAnnotation.swift */; };
+		8475A73F1EC4E398002B02CD /* SavedPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475A73E1EC4E398002B02CD /* SavedPlacesViewController.swift */; };
+		8475A7411EC4E4CF002B02CD /* SavedPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475A7401EC4E4CF002B02CD /* SavedPlaceViewController.swift */; };
 		8476E6F01EBA8CD500B78425 /* settings-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 8476E6EF1EBA8CD500B78425 /* settings-filled.png */; };
 		8476E6F21EBA8DDC00B78425 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */; };
 		84CCACF91EBA5CE90007BFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCACF81EBA5CE90007BFE6 /* AppDelegate.swift */; };
@@ -41,15 +42,16 @@
 		84201D991EC1149100F04FD6 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		84201D9B1EC2288600F04FD6 /* TweetMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetMapViewController.swift; sourceTree = "<group>"; };
 		84201D9D1EC2295200F04FD6 /* mappinned-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mappinned-filled.png"; path = "Assets.xcassets/mappinned-filled.png"; sourceTree = "<group>"; };
-		843124011EC39DA100218CBB /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		843437071EBBAE6500A957C9 /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
 		843437121EBBBA3D00A957C9 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		843437141EBBBC9B00A957C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		843826331EBBDCBE005C8021 /* TwitterDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDeserializer.swift; sourceTree = "<group>"; };
 		843826361EBBE997005C8021 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		843826381EBBE9BF005C8021 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
-		84681FEF1EC3C2AE004F667D /* PickPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickPlaceViewController.swift; sourceTree = "<group>"; };
+		84681FEF1EC3C2AE004F667D /* CustomPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlaceViewController.swift; sourceTree = "<group>"; };
 		847170241EC24ABA00CF0954 /* TweetAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetAnnotation.swift; sourceTree = "<group>"; };
+		8475A73E1EC4E398002B02CD /* SavedPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPlacesViewController.swift; sourceTree = "<group>"; };
+		8475A7401EC4E4CF002B02CD /* SavedPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPlaceViewController.swift; sourceTree = "<group>"; };
 		8476E6EF1EBA8CD500B78425 /* settings-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-filled.png"; path = "Assets.xcassets/settings-filled.png"; sourceTree = "<group>"; };
 		8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84CCACF51EBA5CE90007BFE6 /* tweetor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweetor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,8 +94,9 @@
 		843123FE1EC39D5F00218CBB /* Places */ = {
 			isa = PBXGroup;
 			children = (
-				84681FEF1EC3C2AE004F667D /* PickPlaceViewController.swift */,
-				843124011EC39DA100218CBB /* PlacesViewController.swift */,
+				84681FEF1EC3C2AE004F667D /* CustomPlaceViewController.swift */,
+				8475A73E1EC4E398002B02CD /* SavedPlacesViewController.swift */,
+				8475A7401EC4E4CF002B02CD /* SavedPlaceViewController.swift */,
 			);
 			name = Places;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8475A7411EC4E4CF002B02CD /* SavedPlaceViewController.swift in Sources */,
 				84ECBC461EBA8387009CED47 /* SearchViewController.swift in Sources */,
 				843437131EBBBA3D00A957C9 /* Tweet.swift in Sources */,
 				84201D9A1EC1149100F04FD6 /* TweetDetailViewController.swift in Sources */,
@@ -342,12 +346,12 @@
 				843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */,
 				847170251EC24ABA00CF0954 /* TweetAnnotation.swift in Sources */,
 				84201D9C1EC2288600F04FD6 /* TweetMapViewController.swift in Sources */,
-				84681FF01EC3C2AE004F667D /* PickPlaceViewController.swift in Sources */,
+				84681FF01EC3C2AE004F667D /* CustomPlaceViewController.swift in Sources */,
 				84CCAD011EBA5CE90007BFE6 /* tweetor.xcdatamodeld in Sources */,
 				84CCACF91EBA5CE90007BFE6 /* AppDelegate.swift in Sources */,
 				8476E6F21EBA8DDC00B78425 /* SettingsViewController.swift in Sources */,
 				843826341EBBDCBE005C8021 /* TwitterDeserializer.swift in Sources */,
-				843124021EC39DA100218CBB /* PlacesViewController.swift in Sources */,
+				8475A73F1EC4E398002B02CD /* SavedPlacesViewController.swift in Sources */,
 				843437151EBBBC9B00A957C9 /* User.swift in Sources */,
 				843826391EBBE9BF005C8021 /* TweetTableViewCell.swift in Sources */,
 			);
