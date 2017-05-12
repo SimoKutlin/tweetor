@@ -12,7 +12,7 @@ class TweetTableViewController: UITableViewController {
     
     var tweets: [Tweet] = [] {
         didSet {
-            //tableView.reloadData()
+            tableView.reloadData()
             print("got \(tweets)")
         }
     }
@@ -37,12 +37,10 @@ class TweetTableViewController: UITableViewController {
         return tweets.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetResultCell", for: indexPath)
 
         if let cell = cell as? TweetTableViewCell {
-            print("pushing \(tweets[indexPath.row])")
             cell.tweetData = tweets[indexPath.row]
         }
 

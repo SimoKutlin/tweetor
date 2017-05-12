@@ -32,8 +32,13 @@ final class Tweet: NSObject, ResponseCollectionConvertible, ResponseConvertible 
         
         user = User(userData: responseData["user"])
         
-        latitude = responseData["geo"]["coordinates"][0].double!
-        longitude = responseData["geo"]["coordinates"][1].double!
+        print("\(responseData["geo", "coordinates"])")
+        if responseData["geo", "coordinates"] != JSON.null {
+            latitude = responseData["geo", "coordinates", 0].double!
+            longitude = responseData["geo", "coordinates", 1].double!
+        }
+        
+        
         
     }
 }

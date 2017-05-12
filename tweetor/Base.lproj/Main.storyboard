@@ -194,6 +194,10 @@
                                 <rect key="frame" x="64" y="99" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="gps-filled"/>
+                                <connections>
+                                    <action selector="fetchUserLocation:" destination="h82-gw-Ahp" eventType="touchUpInside" id="D9v-gh-YBr"/>
+                                    <action selector="setUserLocation:" destination="h82-gw-Ahp" eventType="touchUpInside" id="yC5-x6-JnK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-nQ-wTz">
                                 <rect key="frame" x="162" y="99" width="50" height="50"/>
@@ -312,7 +316,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetResultCell" rowHeight="127" id="l6K-GD-Y8W" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetResultCell" rowHeight="127" id="l6K-GD-Y8W" customClass="ResultTableViewCell" customModule="tweetor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="127"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6K-GD-Y8W" id="03t-fH-dc9">
@@ -460,9 +464,9 @@
         <!--Navigation Controller-->
         <scene sceneID="nJb-Cu-NAt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h4h-Im-jET" sceneMemberID="viewController">
+                <navigationController id="h4h-Im-jET" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="avH-ra-uzz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="avH-ra-uzz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -478,9 +482,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ArV-qq-xtW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7cR-p3-DER" sceneMemberID="viewController">
+                <navigationController id="7cR-p3-DER" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RW2-cU-s0B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RW2-cU-s0B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -496,9 +500,9 @@
         <!--Navigation Controller-->
         <scene sceneID="2bG-mI-Z75">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uG2-rE-3gu" sceneMemberID="viewController">
+                <navigationController id="uG2-rE-3gu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q7i-mq-kQp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q7i-mq-kQp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -521,6 +525,6 @@
         <image name="twitter-128.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zJb-6E-Yny"/>
+        <segue reference="i3y-w2-n02"/>
     </inferredMetricsTieBreakers>
 </document>

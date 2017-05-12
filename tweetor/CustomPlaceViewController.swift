@@ -23,9 +23,17 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
     @IBOutlet weak var toggleFavsButton: UIButton!
     @IBOutlet weak var goSearchButton: UIButton!
     
+    weak var delegate: SearchLocationDelegate? = nil
+    
     // location to search at
     private var customLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
-        
+    
+    // set search location in search controller
+    @IBAction func setLocation(_ sender: UIButton) {
+        delegate?.search(withLocation: self.customLocation)
+        _  = navigationController?.popViewController(animated: true)
+    }
+    
     // core data stuff
     @IBAction func addToFavourites(_ sender: UIButton) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -133,20 +141,6 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
         return annotationView
     }
 
-    
-    // seguing
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            switch identifier {
-            case "SetLocation":
-                if let seguedToMVC = segue.destination as? SearchViewController {
-                    seguedToMVC.searchLocation = customLocation
-                }
-                
-            default: break
-            }
-        }
-    }
     
     // other stuff xcode gave me
     override func didReceiveMemoryWarning() {

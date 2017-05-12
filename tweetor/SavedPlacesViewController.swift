@@ -14,6 +14,8 @@ class SavedPlacesViewController: UITableViewController {
     
     var favPlaces: [NSManagedObject] = []
     
+    weak var delegate: SearchLocationDelegate? = nil
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -59,6 +61,15 @@ class SavedPlacesViewController: UITableViewController {
         return cell
     }
     
+    // set search location in search controller
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let place = self.favPlaces[indexPath.row]
+        let customLocation = CLLocationCoordinate2D(latitude: place.value(forKey: "latitude") as! CLLocationDegrees, longitude: place.value(forKey: "longitude") as! CLLocationDegrees)
+        delegate?.search(withLocation: customLocation)
+        _  = navigationController?.popViewController(animated: true)
+        
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -80,23 +91,7 @@ class SavedPlacesViewController: UITableViewController {
             }
         }
     }
-    
-    // seguing
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            switch identifier {
-            case "SetLocation":
-                if let cell = sender as? SavedPlaceViewController,
-                    let locationData = cell.locationData,
-                    let seguedToMVC = segue.destination as? SearchViewController {
-                    seguedToMVC.searchLocation = CLLocationCoordinate2D(latitude: locationData.latitude, longitude: locationData.longitude)
-                }
-                
-            default: break
-            }
-        }
-    }
-    
+        
     // other stuff xcode gave me
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

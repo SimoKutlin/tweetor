@@ -10,7 +10,12 @@ import CoreLocation
 import FontAwesome_swift
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate {
+// used to set search location from other views
+protocol SearchLocationDelegate: class {
+    func search(withLocation location: CLLocationCoordinate2D)
+}
+
+class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, SearchLocationDelegate {
     
     // UI Elements
     @IBOutlet weak var searchBar: UISearchBar!
@@ -37,6 +42,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         sliderValueChanged(distanceSlider)
     }
     
+    func search(withLocation location: CLLocationCoordinate2D) {
+        self.searchLocation = location
+    }
+    
+    @IBAction func fetchUserLocation(_ sender: UIButton) {
+        locationManager.startUpdatingLocation()
+    }
+    
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         distanceLabel?.text = String(format: "%.2f", distanceSlider.value) + " km"
     }
@@ -50,9 +63,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             
             var parameters = [String: String]()
             parameters["q"] = searchTerm
-            parameters["geocode"] = "48.1374300,11.5754900,1km"
+            
+            parameters["geocode"] = "\(searchLocation.latitude),\(searchLocation.longitude),\(String(format: "%.2f", distanceSlider.value))km"
+            print("searching with \(parameters)")
             
             TwitterManager().requestTweets(withParams: parameters) { (response, error) in
+                print("response \(response)")
                 if let tweets = response?.objects {
                     if tweets.count == 0 {
                         let alert = UIAlertController(title: "Info", message: "No tweets found", preferredStyle: UIAlertControllerStyle.alert)
@@ -104,11 +120,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 _ = segue.destination as? SettingsViewController
                 
             case "CustomPlaceSegue":
-                _ = segue.destination as? CustomPlaceViewController
+                let seguedMVC = segue.destination as? CustomPlaceViewController
+                seguedMVC?.delegate = self
+                self.userLocationButton.isHighlighted = false
                 
             case "SavedPlacesSegue":
-                _ = segue.destination as? SavedPlacesViewController
-    
+                let seguedMVC = segue.destination as? SavedPlacesViewController
+                seguedMVC?.delegate = self
+                self.userLocationButton.isHighlighted = false
             default: break
             }
         }

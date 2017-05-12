@@ -23,8 +23,11 @@ open class TwitterDeserializer {
         }
         
         let JSONdata = JSON(data)
-        let results: [Tweet] = Tweet.collection(JSONdata["statuses"])
-        response.objects = results
+        if let tweets = JSONdata["statuses"] as? JSON {
+            let results: [Tweet] = Tweet.collection(tweets)
+            
+            response.objects = results
+        }
         
         return response
     }
