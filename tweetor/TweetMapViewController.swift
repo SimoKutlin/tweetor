@@ -64,6 +64,20 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
         return annotationView
     }
     
+    // segueing
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "TweetDetailSegue":
+                if let seguedToMVC = segue.destination as? TweetDetailViewController {
+                    //seguedToMVC.tweetData = tweets[indexPath.row]
+                }
+                
+            default: break
+            }
+        }
+    }
+    
     // other stuff xcode gave me
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

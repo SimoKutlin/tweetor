@@ -312,16 +312,16 @@
         <scene sceneID="tKa-Cf-e3Y">
             <objects>
                 <tableViewController id="1lC-jP-UZR" customClass="TweetTableViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" sectionHeaderHeight="28" sectionFooterHeight="28" id="tF8-Y4-coT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="tF8-Y4-coT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetResultCell" rowHeight="127" id="l6K-GD-Y8W" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="127"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetResultCell" rowHeight="130" id="l6K-GD-Y8W" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6K-GD-Y8W" id="03t-fH-dc9">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="126"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1k6-tk-WOa">
@@ -404,6 +404,7 @@
                     <navigationItem key="navigationItem" title="Resultmap" id="Bro-bA-mTy"/>
                     <connections>
                         <outlet property="resultMap" destination="3Gd-sO-BmC" id="KzT-xW-suc"/>
+                        <segue destination="MYC-i5-eZ3" kind="showDetail" identifier="TweetDetailSegue" id="wat-of-hQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGM-6c-1XS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -433,10 +434,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEa-oA-MS9">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEa-oA-MS9">
                                 <rect key="frame" x="74" y="108" width="285" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -467,7 +468,7 @@
             <objects>
                 <navigationController id="h4h-Im-jET" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="avH-ra-uzz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="avH-ra-uzz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -485,7 +486,7 @@
             <objects>
                 <navigationController id="7cR-p3-DER" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RW2-cU-s0B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RW2-cU-s0B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -503,7 +504,7 @@
             <objects>
                 <navigationController id="uG2-rE-3gu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q7i-mq-kQp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q7i-mq-kQp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -526,7 +527,8 @@
         <image name="twitter-128.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i3y-w2-n02"/>
         <segue reference="M0i-ya-AoR"/>
+        <segue reference="uVD-8a-LrD"/>
+        <segue reference="i3y-w2-n02"/>
     </inferredMetricsTieBreakers>
 </document>
