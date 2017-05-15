@@ -24,7 +24,14 @@ class TweetTableViewCell: UITableViewCell {
             usernameLabel?.text = "@" + user.username
             
             tweetLabel?.text = data.text
-            userThumbnail?.image = UIImage(named: user.imageURL)
+            
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: URL(string: user.imageURL)!)
+                
+                DispatchQueue.main.async {
+                    self.imageView?.image = UIImage(data: data!)
+                }
+            }
         }
     }
 
