@@ -22,7 +22,7 @@ class TweetTableViewController: UITableViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: "TweetResultCell")
+        //tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: "TweetResultCell")
     }
 
     
@@ -54,9 +54,16 @@ class TweetTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
-            case "ShowTweetMap":
+            case "TweetMapSegue":
                 if let seguedToMVC = segue.destination as? TweetMapViewController {
                     seguedToMVC.tweets = self.tweets
+                }
+                
+            case "TweetDetailSegue":
+                if let cell = sender as? TweetTableViewCell,
+                    let indexPath = tableView.indexPath(for: cell),
+                    let seguedToMVC = segue.destination as? TweetDetailViewController {
+                    seguedToMVC.tweetData = tweets[indexPath.row]
                 }
                 
             default: break

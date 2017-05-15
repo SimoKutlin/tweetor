@@ -78,12 +78,9 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
                         for tweet in tweets {
                             self.tweets += [tweet]
                         }
-                        print("got \(self.tweets.count) tweets")
+                        print("found \(self.tweets.count) tweets")
                         
-                        let searchResultController: TweetTableViewController = TweetTableViewController()
-                        //let searchResultController: TweetMapViewController = TweetMapViewController()
-                        searchResultController.tweets = self.tweets
-                        self.navigationController?.pushViewController(searchResultController, animated: true)
+                        self.performSegue(withIdentifier: "TweetResultSegue", sender: self)
                     }
                 } else {
                     let alert = UIAlertController(title: "Ooops", message: "Something went wrong when trying to search tweets", preferredStyle: UIAlertControllerStyle.alert)
@@ -128,6 +125,11 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
                 let seguedMVC = segue.destination as? SavedPlacesViewController
                 seguedMVC?.delegate = self
                 self.userLocationButton.isHighlighted = false
+                
+            case "TweetResultSegue":
+                let seguedMVC = segue.destination as? TweetTableViewController
+                seguedMVC?.tweets = self.tweets
+                	
             default: break
             }
         }
