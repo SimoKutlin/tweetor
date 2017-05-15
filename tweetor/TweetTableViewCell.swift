@@ -10,18 +10,19 @@ import UIKit
 
 class TweetTableViewCell: UITableViewCell {
     
-    var tweetData: Tweet? { didSet { updateUI() } }
-    
+    // UI Elements
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userThumbnail: UIImageView!
     @IBOutlet weak var tweetLabel: UILabel!
     
+    var tweetData: Tweet? { didSet { updateUI() } }
     
     private func updateUI() {
         if let data = tweetData, let user = data.user {
             fullnameLabel?.text = user.name
-            usernameLabel?.text = user.username
+            usernameLabel?.text = "@" + user.username
+            
             tweetLabel?.text = data.text
             userThumbnail?.image = UIImage(named: user.imageURL)
         }
