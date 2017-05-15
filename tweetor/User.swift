@@ -15,14 +15,17 @@ final class User: NSObject {
     var username: String = ""
     
     //TODO suspended for now, maybe find a workaround
-    //var profileURL: String = ""
+    var profileURL: String = ""
     var imageURL: String = ""
     
     init(userData: JSON) {
         name = userData["name"].string!
         username = userData["screen_name"].string!
-        //profileURL = userData["url"].string!
-        //profileURL = profileURL.replacingOccurrences(of: "\\/", with: "/")
+        
+        if userData["url"] != JSON.null {
+            profileURL = userData["url"].string!
+            profileURL = profileURL.replacingOccurrences(of: "\\/", with: "/")
+        }        
         
         imageURL = userData["profile_image_url_https"].string!
         imageURL = imageURL.replacingOccurrences(of: "\\/", with: "/")
