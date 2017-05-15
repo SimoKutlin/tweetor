@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetDetailViewController: UIViewController {
+class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // UI Elements
     @IBOutlet weak var fullnameLabel: UILabel!
@@ -21,20 +21,31 @@ class TweetDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fullnameLabel.text = ""
+        usernameLabel.text = ""
+        tweetTextLabel.text = ""
 
-        // Do any additional setup after loading the view.
+        let handler = #selector(TweetDetailViewController.handleTap(gestureRecognizer:))
+        let gestureRecognizer: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: handler)
+        gestureRecognizer.delegate = self
+        userImage.addGestureRecognizer(gestureRecognizer)
     }
 
     
     private func updateUI() {
         if let data = tweetData, let user = data.user {
-            print("showing \(tweetData!)")
             fullnameLabel?.text = user.name
             usernameLabel?.text = "@" + user.username
             
             tweetTextLabel?.text = data.text
             userImage?.image = UIImage(named: user.imageURL)
-            
+        }
+    }
+    
+    func handleTap(gestureRecognizer: UILongPressGestureRecognizer) {
+        if let data = tweetData, let user = data.user {
+            UIApplication.shared.open(URL(string: user.profileURL)!, options: [:], completionHandler: nil)
         }
     }
     
