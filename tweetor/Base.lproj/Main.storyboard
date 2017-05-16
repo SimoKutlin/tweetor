@@ -193,7 +193,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQg-W7-Mqz">
                                 <rect key="frame" x="64" y="99" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="gps-filled"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="fetchUserLocation:" destination="h82-gw-Ahp" eventType="touchUpInside" id="D9v-gh-YBr"/>
                                     <action selector="setUserLocation:" destination="h82-gw-Ahp" eventType="touchUpInside" id="yC5-x6-JnK"/>
@@ -202,15 +202,15 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-nQ-wTz">
                                 <rect key="frame" x="162" y="99" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="star-filled"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="cD9-hv-TqM" kind="show" id="h4g-SM-5dN"/>
+                                    <segue destination="cD9-hv-TqM" kind="show" identifier="SavedPlacesSegue" id="h4g-SM-5dN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUn-Pm-kVs">
                                 <rect key="frame" x="260" y="99" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="marker-filled"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="ul2-Qn-M6F" kind="show" identifier="CustomPlaceSegue" id="dfM-1h-TWQ"/>
                                 </connections>
@@ -231,8 +231,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="customPlaceButton" destination="VUn-Pm-kVs" id="E4w-vs-poV"/>
                         <outlet property="distanceLabel" destination="m08-gc-4ya" id="oY2-uQ-MBV"/>
                         <outlet property="distanceSlider" destination="xxk-sL-OZT" id="9zS-Zf-95d"/>
+                        <outlet property="savedPlacesButton" destination="uDy-nQ-wTz" id="e5f-BU-3de"/>
                         <outlet property="searchBar" destination="88y-Jj-gDO" id="dr1-4C-SJg"/>
                         <outlet property="userLocationButton" destination="qQg-W7-Mqz" id="e1c-Qg-Uwj"/>
                         <segue destination="1lC-jP-UZR" kind="show" identifier="TweetResultSegue" id="Q1N-N9-7qA"/>
@@ -293,7 +295,6 @@
                                     <outlet property="nameLabel" destination="KVU-0N-pR9" id="Off-SL-DQg"/>
                                     <outlet property="streetLabel" destination="s61-Jk-20B" id="eSd-ao-ZJv"/>
                                     <outlet property="zipLabel" destination="CeD-3r-0r3" id="5Dd-Ch-zOn"/>
-                                    <segue destination="h82-gw-Ahp" kind="show" identifier="SetLocation" id="zJb-6E-Yny"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -312,19 +313,19 @@
         <scene sceneID="tKa-Cf-e3Y">
             <objects>
                 <tableViewController id="1lC-jP-UZR" customClass="TweetTableViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="tF8-Y4-coT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="28" sectionFooterHeight="28" id="tF8-Y4-coT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetResultCell" rowHeight="130" id="l6K-GD-Y8W" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetResultCell" rowHeight="161" id="l6K-GD-Y8W" customClass="TweetTableViewCell" customModule="tweetor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="161"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6K-GD-Y8W" id="03t-fH-dc9">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="129"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1k6-tk-WOa">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1k6-tk-WOa">
                                             <rect key="frame" x="8" y="8" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -339,11 +340,18 @@
                                             <rect key="frame" x="66" y="37" width="268" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.0" green="0.51764705879999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9t-nQ-P7x">
-                                            <rect key="frame" x="8" y="66" width="326" height="50"/>
+                                            <rect key="frame" x="8" y="102" width="326" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOe-xR-NBp">
+                                            <rect key="frame" x="8" y="66" width="334" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -353,10 +361,11 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="fullnameLabel" destination="5zE-hg-ELr" id="Gwh-Ah-coy"/>
+                                    <outlet property="timestampLabel" destination="fOe-xR-NBp" id="7vP-aq-9TP"/>
                                     <outlet property="tweetLabel" destination="g9t-nQ-P7x" id="U3X-OW-SYG"/>
                                     <outlet property="userThumbnail" destination="1k6-tk-WOa" id="19R-8d-oXL"/>
                                     <outlet property="usernameLabel" destination="KkQ-Kx-NDD" id="M1R-vn-fdD"/>
-                                    <segue destination="MYC-i5-eZ3" kind="show" identifier="TweetDetailSegue" id="uVD-8a-LrD"/>
+                                    <segue destination="MYC-i5-eZ3" kind="showDetail" identifier="TweetDetailSegue" action="showViewController:sender:" id="uVD-8a-LrD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -366,14 +375,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Results" id="WIR-Oz-KlG">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="K6g-RS-Fb1">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o7Y-bv-wxc">
-                                <rect key="frame" x="329" y="7" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="mappinned-filled"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" image="mappinned-filled" width="30" id="ps6-di-Wai">
                             <connections>
-                                <segue destination="uG2-rE-3gu" kind="show" identifier="TweetMapSegue" id="RTI-xH-IKW"/>
+                                <segue destination="6uB-xQ-YR7" kind="presentation" identifier="TweetMapSegue" id="JUH-XR-n5A"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -438,16 +442,23 @@
                                 <rect key="frame" x="74" y="108" width="285" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.51764705882352935" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-nJ-ejO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-nJ-ejO">
                                 <rect key="frame" x="16" y="137" width="343" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SMY-hV-gL7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Tweet" id="Dq4-hh-x9u"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -468,7 +479,7 @@
             <objects>
                 <navigationController id="h4h-Im-jET" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="avH-ra-uzz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="avH-ra-uzz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -486,7 +497,7 @@
             <objects>
                 <navigationController id="7cR-p3-DER" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RW2-cU-s0B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RW2-cU-s0B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -499,36 +510,14 @@
             </objects>
             <point key="canvasLocation" x="3222" y="137"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="2bG-mI-Z75">
-            <objects>
-                <navigationController id="uG2-rE-3gu" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q7i-mq-kQp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6uB-xQ-YR7" kind="relationship" relationship="rootViewController" id="t9j-4T-ElF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hql-Od-col" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3956" y="-649"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="gps-filled" width="50" height="50"/>
         <image name="mappinned-filled" width="50" height="50"/>
-        <image name="marker-filled" width="50" height="50"/>
         <image name="settings-filled.png" width="25" height="25"/>
-        <image name="star-filled" width="50" height="50"/>
         <image name="twitter-128.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M0i-ya-AoR"/>
+        <segue reference="Q1N-N9-7qA"/>
         <segue reference="uVD-8a-LrD"/>
-        <segue reference="i3y-w2-n02"/>
     </inferredMetricsTieBreakers>
 </document>

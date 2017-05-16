@@ -22,10 +22,6 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fullnameLabel.text = ""
-        usernameLabel.text = ""
-        tweetTextLabel.text = ""
-
         let handler = #selector(TweetDetailViewController.handleTap(gestureRecognizer:))
         let gestureRecognizer: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: handler)
         gestureRecognizer.delegate = self
@@ -34,12 +30,20 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
     
     private func updateUI() {
-        if let data = tweetData, let user = data.user {
-            fullnameLabel?.text = user.name
-            usernameLabel?.text = "@" + user.username
+        if let tweet = tweetData, let user = tweet.user {
             
-            tweetTextLabel?.text = data.text
-            userImage?.image = UIImage(named: user.imageURL)
+            
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: URL(string: user.imageURL)!)
+                
+                DispatchQueue.main.async {
+                    self.userImage?.image = UIImage(data: data!)
+                    print("setting!")
+                    self.fullnameLabel?.text = user.name
+                    self.usernameLabel?.text = "@" + user.username
+                    self.tweetTextLabel?.text = tweet.text
+                }
+            }
         }
     }
     
