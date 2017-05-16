@@ -14,24 +14,27 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var resultMap: MKMapView!
     
-    var tweets: [Tweet] = [] { didSet { updateGUI() } }
+    var tweets: [Tweet] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resultMap?.delegate = self
+        
+        updateGUI()
     }
     
     private func updateGUI() {
-        var pins: [MKPointAnnotation] = []
+        var pins: [TweetAnnotation] = []
         
         for tweet in self.tweets {
-            if let tweetData: Tweet = tweet, let userData: User = tweetData.user {
-                let annotation = MKPointAnnotation()
-                let coordinates = CLLocationCoordinate2DMake(tweetData.latitude, tweetData.longitude)
-                annotation.coordinate = coordinates
-                annotation.title = userData.username
-                annotation.subtitle = tweetData.text
+            if let userData = tweet.user {
+                
+                let coordinates = CLLocationCoordinate2DMake(tweet.latitude, tweet.longitude)
+                let annotation = TweetAnnotation(coordinates, tweet)
+                //annotation.coordinate = coordinates
+                annotation.title = "@" + userData.username
+                annotation.subtitle = tweet.text
                 
                 pins += [annotation]
             }
@@ -43,25 +46,34 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
         
         let identifier = "pin"
         
-        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         if annotationView == nil {
-            let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView.isEnabled = true
-            annotationView.canShowCallout = true
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.isEnabled = true
+            annotationView?.canShowCallout = true
         } else {
             annotationView!.annotation = annotation
         }
         
+        let detailButton = UIButton(type: .detailDisclosure)
+        annotationView?.rightCalloutAccessoryView = detailButton
         let subtitleView = UILabel()
         subtitleView.font = subtitleView.font.withSize(12.0)
         subtitleView.numberOfLines = 0
         subtitleView.text = annotation.subtitle!
-        annotationView!.detailCalloutAccessoryView = subtitleView
+        annotationView?.leftCalloutAccessoryView = subtitleView
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "TweetDetailSegue", sender: control)
     }
     
     // segueing
@@ -69,8 +81,9 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
         if let identifier = segue.identifier {
             switch identifier {
             case "TweetDetailSegue":
-                if let seguedToMVC = segue.destination as? TweetDetailViewController {
-                    //seguedToMVC.tweetData = tweets[indexPath.row]
+                if let seguedToMVC = segue.destination as? TweetDetailViewController,
+                    let annotation = sender as? TweetAnnotation {
+                    seguedToMVC.tweetData = annotation.tweet
                 }
                 
             default: break
