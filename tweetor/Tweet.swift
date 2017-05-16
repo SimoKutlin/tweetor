@@ -13,6 +13,7 @@ final class Tweet: NSObject, ResponseCollectionConvertible, ResponseConvertible 
     
     var identifier: String = ""
     var text: String = ""
+    var timestamp: String = ""
     var user: User? = nil
     
     var latitude: Double = 0.0
@@ -28,6 +29,15 @@ final class Tweet: NSObject, ResponseCollectionConvertible, ResponseConvertible 
     
     init(responseData: JSON) {
         identifier = responseData["id_str"].string ?? ""
+        
+        let dateString = responseData["created_at"].string
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE'MMM'dd'HH:mm:ss'ZZZZ'yyyy"
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        let date = dateFormatter.date(from: dateString!)
+        timestamp = dateFormatter.string(from: date!)
+        
         text = responseData["text"].string ?? ""
         
         user = User(userData: responseData["user"])

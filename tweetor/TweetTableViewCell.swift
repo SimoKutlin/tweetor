@@ -14,6 +14,7 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userThumbnail: UIImageView!
+    @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     
     var tweetData: Tweet? { didSet { updateUI() } }
@@ -23,6 +24,7 @@ class TweetTableViewCell: UITableViewCell {
             fullnameLabel?.text = user.name
             usernameLabel?.text = "@" + user.username
             
+            timestampLabel?.text = data.timestamp
             tweetLabel?.text = data.text
             
             DispatchQueue.global().async {
