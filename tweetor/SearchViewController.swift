@@ -22,6 +22,8 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
     @IBOutlet weak var distanceSlider: UISlider!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var userLocationButton: UIButton!
+    @IBOutlet weak var savedPlacesButton: UIButton!
+    @IBOutlet weak var customPlaceButton: UIButton!
     
     var tweets = [Tweet]()
     
@@ -31,6 +33,16 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // additional button setup
+        userLocationButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 50)
+        userLocationButton.setTitle(String.fontAwesomeIcon(name: .locationArrow), for: .normal)
+        
+        savedPlacesButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 50)
+        savedPlacesButton.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
+        
+        customPlaceButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 50)
+        customPlaceButton.setTitle(String.fontAwesomeIcon(name: .mapMarker), for: .normal)
         
         searchBar.delegate = self
         locationManager.delegate = self
