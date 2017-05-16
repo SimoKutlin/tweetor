@@ -29,7 +29,7 @@ class TweetTableViewCell: UITableViewCell {
                 let data = try? Data(contentsOf: URL(string: user.imageURL)!)
                 
                 DispatchQueue.main.async {
-                    self.imageView?.image = UIImage(data: data!)
+                    self.userThumbnail?.image = UIImage(data: data!)
                 }
             }
         }
