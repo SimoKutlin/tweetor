@@ -55,6 +55,7 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
         
         do {
             try managedContext.save()
+            toggleFavsButton.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
         } catch let error as NSError {
             let alert = UIAlertController(title: "Error", message: "Could not save. \(error)", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
@@ -69,8 +70,8 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
         zipLabel.text = ""
         cityLabel.text = ""
         
-        //toggleFavsButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30)
-        //toggleFavsButton.setTitle(String.fontAwesomeIcon(name: FontAwesome(rawValue: "star-o")!), for: .normal)
+        toggleFavsButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30)
+        toggleFavsButton.setTitle(String.fontAwesomeIcon(name: .starO), for: .normal)
         toggleFavsButton.isHidden = true
         
         goSearchButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30)
