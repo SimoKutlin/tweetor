@@ -14,6 +14,10 @@ final class Tweet: NSObject, ResponseCollectionConvertible, ResponseConvertible 
     var identifier: String = ""
     var text: String = ""
     var timestamp: String = ""
+    
+    var mediaURL: String = ""
+    var mediaType: String = ""
+    
     var user: User? = nil
     
     var latitude: Double = 0.0
@@ -39,6 +43,19 @@ final class Tweet: NSObject, ResponseCollectionConvertible, ResponseConvertible 
         timestamp = dateFormatter.string(from: date!)
         
         text = responseData["text"].string ?? ""
+        
+        if responseData["extended_entities", "media", 0] != JSON.null {
+            switch responseData["extended_entities", "media", 0, "type"].string! {
+                case "photo":
+                    mediaType = "photo"
+                    mediaURL = responseData["extended_entities", "media", 0, "media_url_https"].string!
+                case "video":
+                    mediaType = "video"
+                    mediaURL = responseData["extended_entities", "media", 0, "video_info", "variants", 0, "url"].string!
+                default:
+                    mediaType = "none"
+            }
+        }
         
         user = User(userData: responseData["user"])
         
