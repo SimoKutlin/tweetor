@@ -445,8 +445,8 @@
                                 <color key="textColor" red="0.0" green="0.51764705882352935" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-nJ-ejO">
-                                <rect key="frame" x="16" y="137" width="343" height="203"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-nJ-ejO">
+                                <rect key="frame" x="16" y="166" width="343" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -459,12 +459,20 @@
                                     <navigationItem title="Tweet" id="Dq4-hh-x9u"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5u-ej-d5B">
+                                <rect key="frame" x="16" y="137" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tweet" id="QzC-Ts-iqe"/>
                     <connections>
                         <outlet property="fullnameLabel" destination="eEl-ix-fVc" id="5gG-wd-X0b"/>
+                        <outlet property="timestampLabel" destination="N5u-ej-d5B" id="TKh-1O-SUF"/>
                         <outlet property="tweetTextLabel" destination="LT7-nJ-ejO" id="l3g-8S-mb6"/>
                         <outlet property="userImage" destination="o5g-uq-rP3" id="EiO-3C-0Hn"/>
                         <outlet property="usernameLabel" destination="oEa-oA-MS9" id="d3G-Eu-0EV"/>
@@ -472,7 +480,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al4-G6-4Ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4905" y="136"/>
+            <point key="canvasLocation" x="4904.8000000000002" y="135.38230884557723"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nJb-Cu-NAt">
@@ -518,6 +526,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q1N-N9-7qA"/>
-        <segue reference="uVD-8a-LrD"/>
+        <segue reference="wat-of-hQA"/>
     </inferredMetricsTieBreakers>
 </document>
