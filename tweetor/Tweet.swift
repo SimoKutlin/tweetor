@@ -32,10 +32,10 @@ final class Tweet: NSObject, ResponseCollectionConvertible, ResponseConvertible 
         
         let dateString = responseData["created_at"].string
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE'MMM'dd'HH:mm:ss'ZZZZ'yyyy"
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
+        dateFormatter.dateFormat = "ccc LLL dd HH:mm:ss Z yyyy"
         let date = dateFormatter.date(from: dateString!)
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
         timestamp = dateFormatter.string(from: date!)
         
         text = responseData["text"].string ?? ""
