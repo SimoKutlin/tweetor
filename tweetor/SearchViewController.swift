@@ -74,7 +74,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
             print("searching for \(searchTerm)")
             
             var parameters = [String: String]()
-            parameters["q"] = searchTerm
+            parameters["q"] = "#" + searchTerm
             
             parameters["geocode"] = "\(searchLocation.latitude),\(searchLocation.longitude),\(String(format: "%.2f", distanceSlider.value))km"
             print("searching with \(parameters)")
