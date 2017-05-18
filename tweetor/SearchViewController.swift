@@ -13,6 +13,7 @@ import UIKit
 // used to set search location from other views
 protocol SearchLocationDelegate: class {
     func search(withLocation location: CLLocationCoordinate2D)
+    func returnGEOParameters() -> (location: CLLocationCoordinate2D, radius: Double)
 }
 
 class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, SearchLocationDelegate {
@@ -54,8 +55,14 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
         sliderValueChanged(distanceSlider)
     }
     
+    
+    // Protocoll functions
     func search(withLocation location: CLLocationCoordinate2D) {
         self.searchLocation = location
+    }
+    
+    func returnGEOParameters() -> (location: CLLocationCoordinate2D, radius: Double) {
+        return (self.searchLocation, Double(distanceSlider.value))
     }
     
     @IBAction func fetchUserLocation(_ sender: UIButton) {
@@ -140,6 +147,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
                 
             case "TweetResultSegue":
                 let seguedMVC = segue.destination as? TweetTableViewController
+                seguedMVC?.delegate = self
                 seguedMVC?.tweets = self.tweets
                 	
             default: break

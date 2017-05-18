@@ -17,6 +17,8 @@ class TweetTableViewController: UITableViewController {
         }
     }
     
+    weak var delegate: SearchLocationDelegate? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,6 +59,7 @@ class TweetTableViewController: UITableViewController {
             case "TweetMapSegue":
                 if let seguedToMVC = segue.destination as? TweetMapViewController {
                     seguedToMVC.tweets = self.tweets
+                    seguedToMVC.geoParams = self.delegate?.returnGEOParameters()
                 }
                 
             case "TweetDetailSegue":

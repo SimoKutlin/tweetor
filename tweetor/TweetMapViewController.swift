@@ -16,6 +16,8 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
     
     var tweets: [Tweet] = []
     
+    var geoParams: (CLLocationCoordinate2D, Double)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +34,7 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
                 
                 let coordinates = CLLocationCoordinate2DMake(tweet.latitude, tweet.longitude)
                 let annotation = TweetAnnotation(coordinates, tweet)
-                //annotation.coordinate = coordinates
+                
                 annotation.title = "@" + userData.username
                 annotation.subtitle = tweet.text
                 
@@ -43,6 +45,13 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
         self.resultMap.addAnnotations(pins)
         
         self.resultMap.showsUserLocation = true
+        
+        // Zoom to search location
+        if let coordinate = self.geoParams?.0, let radius = self.geoParams?.1 {
+            let zoomRadius = MKCoordinateSpanMake(radius / 400, radius / 400)
+            let zoomRegion = MKCoordinateRegion(center: coordinate, span: zoomRadius)
+            self.resultMap?.setRegion(zoomRegion, animated: true)
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
