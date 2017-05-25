@@ -398,14 +398,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Gd-sO-BmC">
-                                <rect key="frame" x="16" y="81" width="343" height="566"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Gd-sO-BmC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3Gd-sO-BmC" secondAttribute="trailing" id="Hso-tt-lsP"/>
+                            <constraint firstItem="3Gd-sO-BmC" firstAttribute="top" secondItem="3sI-7j-nWc" secondAttribute="bottom" id="LUZ-r9-0oo"/>
+                            <constraint firstItem="3Gd-sO-BmC" firstAttribute="bottom" secondItem="fFN-NY-WZ4" secondAttribute="top" id="dfp-US-cLh"/>
+                            <constraint firstItem="3Gd-sO-BmC" firstAttribute="leading" secondItem="gDQ-fq-HS5" secondAttribute="leading" id="nmh-TU-hP0"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Resultmap" id="Bro-bA-mTy"/>
+                    <navigationItem key="navigationItem" title="Resultmap" id="Bro-bA-mTy">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="wCV-7U-Q7e"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="resultMap" destination="3Gd-sO-BmC" id="KzT-xW-suc"/>
                         <segue destination="MYC-i5-eZ3" kind="showDetail" identifier="TweetDetailSegue" id="wat-of-hQA"/>
@@ -517,6 +524,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQo-7q-prG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3222" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SBB-lc-EFu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BTg-l2-w08" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="b2d-Le-PQZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6uB-xQ-YR7" kind="relationship" relationship="rootViewController" id="CHo-rt-dfS"/>
+                        <segue destination="2QU-hs-dzA" kind="unwind" identifier="BackToResultListSegue" unwindAction="unwindToResultListWithSegue:" id="Lv4-nQ-xOE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NyV-Ii-lYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2QU-hs-dzA" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4904.8000000000002" y="-649.02548725637189"/>
         </scene>
     </scenes>
     <resources>

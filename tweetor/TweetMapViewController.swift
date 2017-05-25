@@ -21,7 +21,11 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resultMap?.delegate = self
+        let backButton : UIBarButtonItem = UIBarButtonItem(title: "List", style: .plain, target: self, action: #selector(self.backSegue))
+        
+        self.navigationItem.leftBarButtonItem = backButton
+        
+        resultMap.delegate = self
         
         updateGUI()
     }
@@ -50,7 +54,7 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
         if let coordinate = self.geoParams?.0, let radius = self.geoParams?.1 {
             let zoomRadius = MKCoordinateSpanMake(radius / 400, radius / 400)
             let zoomRegion = MKCoordinateRegion(center: coordinate, span: zoomRadius)
-            self.resultMap?.setRegion(zoomRegion, animated: true)
+            self.resultMap.setRegion(zoomRegion, animated: true)
         }
     }
     
@@ -82,7 +86,7 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegue(withIdentifier: "TweetDetailSegue", sender: control)
+        performSegue(withIdentifier: "TweetDetailSegue", sender: view.annotation)
     }
     
     // segueing
@@ -98,6 +102,10 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
             default: break
             }
         }
+    }
+    
+    @objc private func backSegue() {
+        self.navigationController!.performSegue(withIdentifier: "BackToResultListSegue", sender: self)
     }
     
     // other stuff xcode gave me

@@ -51,13 +51,16 @@ class TweetTableViewController: UITableViewController {
  
     
     // MARK: - Navigation
+    
+    @IBAction func unwindToResultList(segue: UIStoryboardSegue) {}
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
             case "TweetMapSegue":
-                if let seguedToMVC = segue.destination as? TweetMapViewController {
+                if let navCtrl = segue.destination as? UINavigationController,
+                    let seguedToMVC = navCtrl.viewControllers.first as? TweetMapViewController {
                     seguedToMVC.tweets = self.tweets
                     seguedToMVC.geoParams = self.delegate?.returnGEOParameters()
                 }
