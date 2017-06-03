@@ -56,6 +56,7 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
         do {
             try managedContext.save()
             toggleFavsButton.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
+            toggleFavsButton.titleLabel?.textColor = UIColor.orange
         } catch let error as NSError {
             let alert = UIAlertController(title: "Error", message: "Could not save. \(error)", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
@@ -78,6 +79,8 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
         goSearchButton.setTitle(String.fontAwesomeIcon(name: .search), for: .normal)
         goSearchButton.isHidden = true
 
+        self.title = "Pick Location"
+        
         mapView.delegate = self
         
         let handler = #selector(CustomPlaceViewController.handleTap(gestureRecognizer:))
@@ -113,8 +116,11 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
                 self.streetLabel.text = placemark.thoroughfare
                 self.zipLabel.text = placemark.postalCode
                 self.cityLabel.text = placemark.locality
+                
                 self.toggleFavsButton.isHidden = false
                 self.goSearchButton.isHidden = false
+                self.toggleFavsButton.titleLabel?.textColor = UIColor.orange
+                self.goSearchButton.titleLabel?.textColor = UIColor.orange
             } else {
                 let alert = UIAlertController(title: "Error", message: "Problem with geodata", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
