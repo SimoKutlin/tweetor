@@ -62,6 +62,7 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
                             mediaView.image = UIImage(data: imageData!)
                             mediaView.frame = viewFrame
                             mediaView.contentMode = .scaleAspectFit
+                            mediaView.tag = 8008
                             self.view.addSubview(mediaView)
                         }
                         
@@ -70,6 +71,7 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
                             mediaView.loadRequest(URLRequest(url: URL(string: tweet.mediaURL)!))
                             mediaView.frame = viewFrame
                             mediaView.contentMode = .scaleAspectFit
+                            mediaView.tag = 8008
                             self.view.addSubview(mediaView)
                         }
                         
@@ -83,6 +85,16 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     func handleTap(gestureRecognizer: UILongPressGestureRecognizer) {
         if let data = tweetData, let user = data.user {
             UIApplication.shared.open(URL(string: user.profileURL)!, options: [:], completionHandler: nil)
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if UIDevice.current.orientation.isLandscape {
+            self.view.viewWithTag(8008)?.isHidden = true
+        } else {
+            self.view.viewWithTag(8008)?.isHidden = false
         }
     }
     
