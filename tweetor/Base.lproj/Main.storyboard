@@ -375,9 +375,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Results" id="WIR-Oz-KlG">
-                        <barButtonItem key="rightBarButtonItem" image="mappinned-filled" width="30" id="ps6-di-Wai">
+                        <barButtonItem key="rightBarButtonItem" title="Map" width="30" id="ps6-di-Wai">
                             <connections>
-                                <segue destination="6uB-xQ-YR7" kind="presentation" identifier="TweetMapSegue" id="JUH-XR-n5A"/>
+                                <segue destination="BTg-l2-w08" kind="presentation" identifier="TweetMapSegue" id="JUH-XR-n5A"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

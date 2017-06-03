@@ -24,7 +24,10 @@ class TweetTableViewController: UITableViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        //tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: "TweetResultCell")
+        
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 30)] as [String: Any]
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
+        self.navigationItem.rightBarButtonItem?.title = String.fontAwesomeIcon(name: .globe)
     }
 
     
@@ -54,7 +57,6 @@ class TweetTableViewController: UITableViewController {
     
     @IBAction func unwindToResultList(segue: UIStoryboardSegue) {}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
