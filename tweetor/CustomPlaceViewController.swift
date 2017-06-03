@@ -30,7 +30,7 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
     
     // set search location in search controller
     @IBAction func setLocation(_ sender: UIButton) {
-        delegate?.search(withLocation: self.customLocation)
+        delegate?.search(withLocation: self.customLocation, locationType: "custom")
         _  = navigationController?.popViewController(animated: true)
     }
     

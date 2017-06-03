@@ -196,7 +196,6 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="fetchUserLocation:" destination="h82-gw-Ahp" eventType="touchUpInside" id="D9v-gh-YBr"/>
-                                    <action selector="setUserLocation:" destination="h82-gw-Ahp" eventType="touchUpInside" id="yC5-x6-JnK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-nQ-wTz">

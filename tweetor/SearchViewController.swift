@@ -12,7 +12,7 @@ import UIKit
 
 // used to set search location from other views
 protocol SearchLocationDelegate: class {
-    func search(withLocation location: CLLocationCoordinate2D)
+    func search(withLocation location: CLLocationCoordinate2D, locationType type: String)
     func returnGEOParameters() -> (location: CLLocationCoordinate2D, radius: Double)
 }
 
@@ -37,6 +37,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
         
         // additional button setup
         userLocationButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 50)
+        userLocationButton.titleLabel?.textColor = UIColor.orange
         userLocationButton.setTitle(String.fontAwesomeIcon(name: .locationArrow), for: .normal)
         
         savedPlacesButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 50)
@@ -57,8 +58,23 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
     
     
     // Protocoll functions
-    func search(withLocation location: CLLocationCoordinate2D) {
+    func search(withLocation location: CLLocationCoordinate2D, locationType type: String) {
         self.searchLocation = location
+        
+        switch type {
+        case "saved":
+            savedPlacesButton.titleLabel?.textColor = UIColor.orange
+            customPlaceButton.titleLabel?.textColor = UIColor.lightGray
+            userLocationButton.titleLabel?.textColor = UIColor.lightGray
+        case "custom":
+            savedPlacesButton.titleLabel?.textColor = UIColor.lightGray
+            customPlaceButton.titleLabel?.textColor = UIColor.orange
+            userLocationButton.titleLabel?.textColor = UIColor.lightGray
+        default:
+            savedPlacesButton.titleLabel?.textColor = UIColor.lightGray
+            customPlaceButton.titleLabel?.textColor = UIColor.lightGray
+            userLocationButton.titleLabel?.textColor = UIColor.orange
+        }
     }
     
     func returnGEOParameters() -> (location: CLLocationCoordinate2D, radius: Double) {
@@ -114,8 +130,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
     // location stuff
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            self.searchLocation = location.coordinate
-            self.userLocationButton.isHighlighted = true
+            self.search(withLocation: location.coordinate, locationType: "")
             // no need for further updating here, also saves battery life #lifehack
             locationManager.stopUpdatingLocation()
         }

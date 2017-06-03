@@ -65,7 +65,7 @@ class SavedPlacesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let place = self.favPlaces[indexPath.row]
         let customLocation = CLLocationCoordinate2D(latitude: place.value(forKey: "latitude") as! CLLocationDegrees, longitude: place.value(forKey: "longitude") as! CLLocationDegrees)
-        delegate?.search(withLocation: customLocation)
+        delegate?.search(withLocation: customLocation, locationType: "saved")
         _  = navigationController?.popViewController(animated: true)
         
     }
