@@ -61,8 +61,7 @@ class TweetTableViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "TweetMapSegue":
-                if let navCtrl = segue.destination as? UINavigationController,
-                    let seguedToMVC = navCtrl.viewControllers.first as? TweetMapViewController {
+                if let seguedToMVC = segue.destination as? TweetMapViewController {
                     seguedToMVC.tweets = self.tweets
                     seguedToMVC.geoParams = self.delegate?.returnGEOParameters()
                 }

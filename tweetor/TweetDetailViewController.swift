@@ -26,6 +26,8 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
         let gestureRecognizer: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: handler)
         gestureRecognizer.delegate = self
         userImage.addGestureRecognizer(gestureRecognizer)
+        
+        self.title = "Tweet"
     }
 
     
@@ -53,7 +55,7 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
                         let frameHeight = self.view.frame.size.height
                         let frameWidth = self.view.frame.size.width
                         let horizontalMargins = frameWidth / 20
-                        let viewFrame = CGRect(x: horizontalMargins, y: frameHeight / 3, width: frameWidth - 2 * horizontalMargins, height: frameHeight / 2)
+                        let viewFrame = CGRect(x: horizontalMargins, y: frameHeight / 2.5, width: frameWidth - 2 * horizontalMargins, height: frameHeight / 2)
                         
                         if tweet.mediaType == "photo" && imageData != nil {
                             let mediaView = UIImageView()

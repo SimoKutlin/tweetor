@@ -21,10 +21,6 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backButton : UIBarButtonItem = UIBarButtonItem(title: "List", style: .plain, target: self, action: #selector(self.backSegue))
-        
-        self.navigationItem.leftBarButtonItem = backButton
-        
         resultMap.delegate = self
         
         updateGUI()
