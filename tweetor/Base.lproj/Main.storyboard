@@ -30,51 +30,44 @@
                                     <navigationItem title="Settings" id="8OR-El-rM5"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-128.png" translatesAutoresizingMaskIntoConstraints="NO" id="vnp-C6-RJS">
-                                <rect key="frame" x="123" y="148" width="128" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweetor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnc-5V-jbM">
-                                <rect key="frame" x="121" y="311" width="133" height="44"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GsE-wI-46s">
+                                <rect key="frame" x="110" y="232.5" width="154" height="202"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-128.png" translatesAutoresizingMaskIntoConstraints="NO" id="vnp-C6-RJS">
+                                        <rect key="frame" x="13" y="0.0" width="128" height="128"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweetor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnc-5V-jbM">
+                                        <rect key="frame" x="28" y="128" width="98" height="33.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweetor v0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYd-6c-aUC">
+                                        <rect key="frame" x="28" y="161.5" width="98" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author: Marko Grgic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSy-vv-biZ">
+                                        <rect key="frame" x="0.0" y="182" width="154" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="csA-VP-Ubv"/>
+                                    <constraint firstItem="fnc-5V-jbM" firstAttribute="trailing" secondItem="wYd-6c-aUC" secondAttribute="trailing" id="CQH-DD-mPK"/>
+                                    <constraint firstAttribute="bottom" secondItem="wYd-6c-aUC" secondAttribute="bottom" constant="20" symbolic="YES" id="fkm-an-y3K"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author: Marko Grgic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSy-vv-biZ">
-                                <rect key="frame" x="110" y="455" width="154" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="BAF-W3-fAC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweetor v0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYd-6c-aUC">
-                                <rect key="frame" x="139" y="395" width="97" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="OxV-fs-dAu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wYd-6c-aUC" firstAttribute="top" secondItem="fnc-5V-jbM" secondAttribute="bottom" constant="40" id="4cJ-CD-2pP"/>
-                            <constraint firstItem="fnc-5V-jbM" firstAttribute="top" secondItem="vnp-C6-RJS" secondAttribute="bottom" constant="35" id="5nj-80-bp7"/>
-                            <constraint firstItem="N5N-4m-Rke" firstAttribute="top" secondItem="PSy-vv-biZ" secondAttribute="bottom" constant="191" id="HZx-78-gPd"/>
-                            <constraint firstItem="BiL-4T-oVG" firstAttribute="leading" secondItem="d88-My-QQb" secondAttribute="leading" id="a0J-Dz-f6E"/>
-                            <constraint firstItem="fnc-5V-jbM" firstAttribute="centerY" secondItem="d88-My-QQb" secondAttribute="centerY" id="ftY-Le-uUT"/>
-                            <constraint firstItem="fnc-5V-jbM" firstAttribute="centerX" secondItem="wYd-6c-aUC" secondAttribute="centerX" id="gmN-ee-RXj"/>
-                            <constraint firstItem="BiL-4T-oVG" firstAttribute="centerX" secondItem="vnp-C6-RJS" secondAttribute="centerX" id="p3V-gw-ozY"/>
-                            <constraint firstItem="BiL-4T-oVG" firstAttribute="bottom" secondItem="776-kz-wvo" secondAttribute="bottom" id="tCB-ew-hQw"/>
-                            <constraint firstAttribute="trailing" secondItem="BiL-4T-oVG" secondAttribute="trailing" id="vnf-ND-vt9"/>
-                            <constraint firstItem="PSy-vv-biZ" firstAttribute="top" secondItem="wYd-6c-aUC" secondAttribute="bottom" constant="39" id="w4x-E4-bHv"/>
-                            <constraint firstItem="wYd-6c-aUC" firstAttribute="centerX" secondItem="PSy-vv-biZ" secondAttribute="centerX" id="yKx-sL-sjd"/>
-                            <constraint firstItem="vnp-C6-RJS" firstAttribute="centerX" secondItem="fnc-5V-jbM" secondAttribute="centerX" id="yP4-Sa-gFN"/>
+                            <constraint firstItem="BiL-4T-oVG" firstAttribute="centerX" secondItem="GsE-wI-46s" secondAttribute="centerX" id="3rl-fg-K2f"/>
+                            <constraint firstItem="BiL-4T-oVG" firstAttribute="bottom" secondItem="776-kz-wvo" secondAttribute="bottom" id="Ndg-Nu-Xig"/>
+                            <constraint firstItem="BiL-4T-oVG" firstAttribute="leading" secondItem="d88-My-QQb" secondAttribute="leading" id="aZT-p2-2wS"/>
+                            <constraint firstAttribute="trailing" secondItem="BiL-4T-oVG" secondAttribute="trailing" id="cb7-Jx-isY"/>
+                            <constraint firstItem="GsE-wI-46s" firstAttribute="centerY" secondItem="d88-My-QQb" secondAttribute="centerY" id="vjW-nP-jxs"/>
                         </constraints>
                     </view>
                 </viewController>
