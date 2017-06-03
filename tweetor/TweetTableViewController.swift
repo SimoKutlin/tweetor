@@ -25,7 +25,7 @@ class TweetTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 30)] as [String: Any]
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 25)] as [String: Any]
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
         self.navigationItem.rightBarButtonItem?.title = String.fontAwesomeIcon(name: .globe)
     }
