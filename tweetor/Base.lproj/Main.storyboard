@@ -199,18 +199,20 @@
                                     <action selector="setUserLocation:" destination="h82-gw-Ahp" eventType="touchUpInside" id="yC5-x6-JnK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-nQ-wTz">
-                                <rect key="frame" x="162" y="99" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-nQ-wTz">
+                                <rect key="frame" x="162" y="106" width="50" height="52"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="cD9-hv-TqM" kind="show" identifier="SavedPlacesSegue" id="h4g-SM-5dN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUn-Pm-kVs">
-                                <rect key="frame" x="260" y="99" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUn-Pm-kVs">
+                                <rect key="frame" x="260" y="106" width="50" height="51"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="ul2-Qn-M6F" kind="show" identifier="CustomPlaceSegue" id="dfM-1h-TWQ"/>
                                 </connections>
@@ -422,7 +424,7 @@
             </objects>
             <point key="canvasLocation" x="4905" y="-649"/>
         </scene>
-        <!--Tweet-->
+        <!--Tweet Detail View Controller-->
         <scene sceneID="TWV-wJ-SG5">
             <objects>
                 <viewController id="MYC-i5-eZ3" customClass="TweetDetailViewController" customModule="tweetor" customModuleProvider="target" sceneMemberID="viewController">
