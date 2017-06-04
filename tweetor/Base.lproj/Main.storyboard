@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h4h-Im-jET">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h4h-Im-jET">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -157,6 +157,7 @@
                             <constraint firstItem="Xec-RV-Kfi" firstAttribute="top" secondItem="qOV-bz-ITT" secondAttribute="bottom" id="HcG-RO-6e9"/>
                             <constraint firstItem="z35-tR-p03" firstAttribute="top" secondItem="Xec-RV-Kfi" secondAttribute="bottom" constant="20" id="U21-nF-I58"/>
                             <constraint firstItem="m4C-U6-fZM" firstAttribute="top" secondItem="z35-tR-p03" secondAttribute="bottom" constant="20" id="UAK-g6-DYH"/>
+                            <constraint firstItem="5qd-Qo-fGc" firstAttribute="trailing" secondItem="Xec-RV-Kfi" secondAttribute="trailing" id="Vb3-0X-UQk"/>
                             <constraint firstItem="bKy-K8-ZOz" firstAttribute="trailing" secondItem="29E-ge-XcA" secondAttribute="trailingMargin" id="aDI-NN-w8M"/>
                             <constraint firstItem="z35-tR-p03" firstAttribute="leading" secondItem="29E-ge-XcA" secondAttribute="leadingMargin" id="hQ7-Qa-hXF"/>
                             <constraint firstItem="bKy-K8-ZOz" firstAttribute="leading" secondItem="z35-tR-p03" secondAttribute="trailing" constant="20" id="pVc-JQ-jBn"/>
@@ -622,6 +623,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="avH-ra-uzz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
