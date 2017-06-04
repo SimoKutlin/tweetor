@@ -279,15 +279,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="NCU-VB-U8Q">
-                        <barButtonItem key="rightBarButtonItem" id="tXN-Ki-hie">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EHc-tM-IZO">
-                                <rect key="frame" x="274" y="7" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="settings-filled.png"/>
-                                <connections>
-                                    <segue destination="1Jf-p4-b2Q" kind="show" identifier="SettingsSegue" id="y71-q8-llB"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="uEA-FO-D4i">
+                            <connections>
+                                <segue destination="1Jf-p4-b2Q" kind="show" identifier="SettingsSegue" id="3u6-vq-A49"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -639,7 +634,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings-filled.png" width="25" height="25"/>
         <image name="twitter-128.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>

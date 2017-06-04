@@ -36,6 +36,10 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
         super.viewDidLoad()
         
         // additional button setup
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 25)] as [String: Any]
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
+        self.navigationItem.rightBarButtonItem?.title = String.fontAwesomeIcon(name: .cog)
+        
         userLocationButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 50)
         userLocationButton.titleLabel?.textColor = UIColor.orange
         userLocationButton.setTitle(String.fontAwesomeIcon(name: .locationArrow), for: .normal)
@@ -130,7 +134,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
     // location stuff
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            self.search(withLocation: location.coordinate, locationType: "")
+            self.search(withLocation: location.coordinate, locationType: "self")
             // no need for further updating here, also saves battery life #lifehack
             locationManager.stopUpdatingLocation()
         }

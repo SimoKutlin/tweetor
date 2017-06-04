@@ -10,7 +10,6 @@
 		4DA385A0B816AA60DB40AD69 /* Pods_tweetor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54603881D1963AA102AE5550 /* Pods_tweetor.framework */; };
 		84201D9A1EC1149100F04FD6 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84201D991EC1149100F04FD6 /* TweetDetailViewController.swift */; };
 		84201D9C1EC2288600F04FD6 /* TweetMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84201D9B1EC2288600F04FD6 /* TweetMapViewController.swift */; };
-		84201D9E1EC2295200F04FD6 /* mappinned-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 84201D9D1EC2295200F04FD6 /* mappinned-filled.png */; };
 		843437081EBBAE6500A957C9 /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437071EBBAE6500A957C9 /* TwitterManager.swift */; };
 		843437131EBBBA3D00A957C9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437121EBBBA3D00A957C9 /* Tweet.swift */; };
 		843437151EBBBC9B00A957C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843437141EBBBC9B00A957C9 /* User.swift */; };
@@ -21,19 +20,14 @@
 		847170251EC24ABA00CF0954 /* TweetAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847170241EC24ABA00CF0954 /* TweetAnnotation.swift */; };
 		8475A73F1EC4E398002B02CD /* SavedPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475A73E1EC4E398002B02CD /* SavedPlacesViewController.swift */; };
 		8475A7411EC4E4CF002B02CD /* SavedPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475A7401EC4E4CF002B02CD /* SavedPlaceViewController.swift */; };
-		8476E6F01EBA8CD500B78425 /* settings-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 8476E6EF1EBA8CD500B78425 /* settings-filled.png */; };
 		8476E6F21EBA8DDC00B78425 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */; };
 		84CCACF91EBA5CE90007BFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCACF81EBA5CE90007BFE6 /* AppDelegate.swift */; };
 		84CCACFE1EBA5CE90007BFE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CCACFC1EBA5CE90007BFE6 /* Main.storyboard */; };
 		84CCAD011EBA5CE90007BFE6 /* tweetor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84CCACFF1EBA5CE90007BFE6 /* tweetor.xcdatamodeld */; };
 		84CCAD031EBA5CE90007BFE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CCAD021EBA5CE90007BFE6 /* Assets.xcassets */; };
 		84CCAD0F1EBA5E780007BFE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CCAD0E1EBA5E780007BFE6 /* MapKit.framework */; };
-		84ECBC421EBA71C0009CED47 /* twitter-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECBC411EBA71C0009CED47 /* twitter-64.png */; };
 		84ECBC441EBA8115009CED47 /* twitter-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECBC431EBA8115009CED47 /* twitter-128.png */; };
 		84ECBC461EBA8387009CED47 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECBC451EBA8387009CED47 /* SearchViewController.swift */; };
-		84ECBC491EBA8823009CED47 /* gps-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECBC481EBA8823009CED47 /* gps-filled.png */; };
-		84ECBC4C1EBA8831009CED47 /* marker-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECBC4A1EBA8831009CED47 /* marker-filled.png */; };
-		84ECBC4D1EBA8831009CED47 /* star-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECBC4B1EBA8831009CED47 /* star-filled.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +35,6 @@
 		54603881D1963AA102AE5550 /* Pods_tweetor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tweetor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84201D991EC1149100F04FD6 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		84201D9B1EC2288600F04FD6 /* TweetMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetMapViewController.swift; sourceTree = "<group>"; };
-		84201D9D1EC2295200F04FD6 /* mappinned-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mappinned-filled.png"; path = "Assets.xcassets/mappinned-filled.png"; sourceTree = "<group>"; };
 		843437071EBBAE6500A957C9 /* TwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
 		843437121EBBBA3D00A957C9 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		843437141EBBBC9B00A957C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -52,7 +45,6 @@
 		847170241EC24ABA00CF0954 /* TweetAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetAnnotation.swift; sourceTree = "<group>"; };
 		8475A73E1EC4E398002B02CD /* SavedPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPlacesViewController.swift; sourceTree = "<group>"; };
 		8475A7401EC4E4CF002B02CD /* SavedPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPlaceViewController.swift; sourceTree = "<group>"; };
-		8476E6EF1EBA8CD500B78425 /* settings-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-filled.png"; path = "Assets.xcassets/settings-filled.png"; sourceTree = "<group>"; };
 		8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84CCACF51EBA5CE90007BFE6 /* tweetor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweetor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CCACF81EBA5CE90007BFE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,12 +53,8 @@
 		84CCAD021EBA5CE90007BFE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CCAD071EBA5CE90007BFE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CCAD0E1EBA5E780007BFE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		84ECBC411EBA71C0009CED47 /* twitter-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-64.png"; path = "Assets.xcassets/twitter-64.png"; sourceTree = "<group>"; };
 		84ECBC431EBA8115009CED47 /* twitter-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-128.png"; path = "Assets.xcassets/twitter-128.png"; sourceTree = "<group>"; };
 		84ECBC451EBA8387009CED47 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		84ECBC481EBA8823009CED47 /* gps-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gps-filled.png"; path = "Assets.xcassets/gps-filled.png"; sourceTree = "<group>"; };
-		84ECBC4A1EBA8831009CED47 /* marker-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "marker-filled.png"; path = "Assets.xcassets/marker-filled.png"; sourceTree = "<group>"; };
-		84ECBC4B1EBA8831009CED47 /* star-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-filled.png"; path = "Assets.xcassets/star-filled.png"; sourceTree = "<group>"; };
 		871C6A7AE89B4C86E38F8A85 /* Pods-tweetor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweetor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tweetor/Pods-tweetor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,13 +176,7 @@
 		84ECBC471EBA880F009CED47 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				84201D9D1EC2295200F04FD6 /* mappinned-filled.png */,
-				8476E6EF1EBA8CD500B78425 /* settings-filled.png */,
-				84ECBC4A1EBA8831009CED47 /* marker-filled.png */,
-				84ECBC4B1EBA8831009CED47 /* star-filled.png */,
-				84ECBC481EBA8823009CED47 /* gps-filled.png */,
 				84ECBC431EBA8115009CED47 /* twitter-128.png */,
-				84ECBC411EBA71C0009CED47 /* twitter-64.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -272,14 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84CCAD031EBA5CE90007BFE6 /* Assets.xcassets in Resources */,
-				84ECBC4C1EBA8831009CED47 /* marker-filled.png in Resources */,
 				84ECBC441EBA8115009CED47 /* twitter-128.png in Resources */,
 				84CCACFE1EBA5CE90007BFE6 /* Main.storyboard in Resources */,
-				8476E6F01EBA8CD500B78425 /* settings-filled.png in Resources */,
-				84201D9E1EC2295200F04FD6 /* mappinned-filled.png in Resources */,
-				84ECBC4D1EBA8831009CED47 /* star-filled.png in Resources */,
-				84ECBC421EBA71C0009CED47 /* twitter-64.png in Resources */,
-				84ECBC491EBA8823009CED47 /* gps-filled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
