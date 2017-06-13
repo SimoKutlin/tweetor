@@ -2,8 +2,8 @@
 //  TwitterDeserializer.swift
 //  tweetor
 //
-//  Created by admin on 05.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import Foundation
@@ -31,4 +31,5 @@ open class TwitterDeserializer {
                 
         return response
     }
+    
 }

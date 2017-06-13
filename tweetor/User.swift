@@ -2,8 +2,8 @@
 //  User.swift
 //  tweetor
 //
-//  Created by admin on 04.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import Foundation
@@ -14,7 +14,6 @@ final class User: NSObject {
     var name: String = ""
     var username: String = ""
     
-    //TODO suspended for now, maybe find a workaround
     var profileURL: String = ""
     var imageURL: String = ""
     
@@ -25,9 +24,12 @@ final class User: NSObject {
         if userData["url"] != JSON.null {
             profileURL = userData["url"].string!
             profileURL = profileURL.replacingOccurrences(of: "\\/", with: "/")
-        }        
+        } else {
+            profileURL = "http://www.twitter.com/" + username
+        }
         
         imageURL = userData["profile_image_url_https"].string!
         imageURL = imageURL.replacingOccurrences(of: "\\/", with: "/")
     }
+    
 }

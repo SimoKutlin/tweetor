@@ -2,8 +2,8 @@
 //  SearchViewController.swift
 //  tweetor
 //
-//  Created by admin on 03.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import CoreLocation
@@ -18,7 +18,8 @@ protocol SearchLocationDelegate: class {
 
 class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, SearchLocationDelegate {
     
-    // UI Elements
+    // MARK: - UI elements
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var distanceSlider: UISlider!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -26,11 +27,41 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
     @IBOutlet weak var savedPlacesButton: UIButton!
     @IBOutlet weak var customPlaceButton: UIButton!
     
+    
     var tweets = [Tweet]()
     
     let locationManager = CLLocationManager()
     
-    var searchLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0) { didSet { print("set to \(searchLocation)") } }
+    var searchLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    
+    
+    // MARK: - Protocol functions
+    
+    func search(withLocation location: CLLocationCoordinate2D, locationType type: String) {
+        self.searchLocation = location
+        
+        switch type {
+        case "saved":
+            savedPlacesButton.titleLabel?.textColor = UIColor.orange
+            customPlaceButton.titleLabel?.textColor = UIColor.lightGray
+            userLocationButton.titleLabel?.textColor = UIColor.lightGray
+        case "custom":
+            savedPlacesButton.titleLabel?.textColor = UIColor.lightGray
+            customPlaceButton.titleLabel?.textColor = UIColor.orange
+            userLocationButton.titleLabel?.textColor = UIColor.lightGray
+        default:
+            savedPlacesButton.titleLabel?.textColor = UIColor.lightGray
+            customPlaceButton.titleLabel?.textColor = UIColor.lightGray
+            userLocationButton.titleLabel?.textColor = UIColor.orange
+        }
+    }
+    
+    func returnGEOParameters() -> (location: CLLocationCoordinate2D, radius: Double) {
+        return (self.searchLocation, Double(distanceSlider.value))
+    }
+    
+    
+    // MARK: - UI Preparation
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,29 +92,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
     }
     
     
-    // Protocoll functions
-    func search(withLocation location: CLLocationCoordinate2D, locationType type: String) {
-        self.searchLocation = location
-        
-        switch type {
-        case "saved":
-            savedPlacesButton.titleLabel?.textColor = UIColor.orange
-            customPlaceButton.titleLabel?.textColor = UIColor.lightGray
-            userLocationButton.titleLabel?.textColor = UIColor.lightGray
-        case "custom":
-            savedPlacesButton.titleLabel?.textColor = UIColor.lightGray
-            customPlaceButton.titleLabel?.textColor = UIColor.orange
-            userLocationButton.titleLabel?.textColor = UIColor.lightGray
-        default:
-            savedPlacesButton.titleLabel?.textColor = UIColor.lightGray
-            customPlaceButton.titleLabel?.textColor = UIColor.lightGray
-            userLocationButton.titleLabel?.textColor = UIColor.orange
-        }
-    }
-    
-    func returnGEOParameters() -> (location: CLLocationCoordinate2D, radius: Double) {
-        return (self.searchLocation, Double(distanceSlider.value))
-    }
+    // MARK: UI functionality
     
     @IBAction func fetchUserLocation(_ sender: UIButton) {
         locationManager.startUpdatingLocation()
@@ -98,40 +107,34 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
         self.tweets.removeAll()
         
         if let searchTerm: String = searchBar.text {
-            print("searching for \(searchTerm)")
             
             var parameters = [String: String]()
-            parameters["q"] = "#" + searchTerm
             
-            parameters["geocode"] = "\(searchLocation.latitude),\(searchLocation.longitude),\(String(format: "%.2f", distanceSlider.value))km"
-            print("searching with \(parameters)")
+            parameters["q"] = "#" + searchTerm
+            parameters["geocode"] = String(searchLocation.latitude) + "," + String(searchLocation.longitude) + "," + String(format: "%.2f", distanceSlider.value) + "km"
             
             TwitterManager().requestTweets(withParams: parameters) { (response, error) in
-                print("response \(response)")
                 if let tweets = response?.objects {
                     if tweets.count == 0 {
-                        let alert = UIAlertController(title: "Info", message: "No tweets found", preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
+                        self.showAlert(title: "Info", message: "No tweets found")
                     } else {
                         for tweet in tweets {
                             self.tweets += [tweet]
                         }
-                        print("found \(self.tweets.count) tweets")
                         
                         self.performSegue(withIdentifier: "TweetResultSegue", sender: self)
                     }
                 } else {
-                    let alert = UIAlertController(title: "Ooops", message: "Something went wrong when trying to search tweets", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    self.showAlert(title: "Ooops", message: "Something went wrong trying to search tweets")
                 }
             }
             
         }
     }
     
-    // location stuff
+    
+    // MARK: Location functionality
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             self.search(withLocation: location.coordinate, locationType: "self")
@@ -141,13 +144,12 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        let alert = UIAlertController(title: "Ooops", message: "Could not fetch user location. \(error)", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        self.showAlert(title: "Ooops", message: "Could not fetch user location. \(error)")
     }
     
     
-    // segueing stuff goes here
+    // MARK: - Navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
@@ -172,6 +174,15 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UISearc
             default: break
             }
         }
+    }
+    
+    // MARK: - Auxiliary functions
+    
+    private func showAlert(title ttl: String, message msg: String) {
+        let alert = UIAlertController(title: ttl, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    
     }
     
     // other stuff xcode gave me

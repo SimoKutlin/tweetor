@@ -19,7 +19,7 @@
 		84681FF01EC3C2AE004F667D /* CustomPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84681FEF1EC3C2AE004F667D /* CustomPlaceViewController.swift */; };
 		847170251EC24ABA00CF0954 /* TweetAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847170241EC24ABA00CF0954 /* TweetAnnotation.swift */; };
 		8475A73F1EC4E398002B02CD /* SavedPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475A73E1EC4E398002B02CD /* SavedPlacesViewController.swift */; };
-		8475A7411EC4E4CF002B02CD /* SavedPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475A7401EC4E4CF002B02CD /* SavedPlaceViewController.swift */; };
+		8475A7411EC4E4CF002B02CD /* SavedPlaceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475A7401EC4E4CF002B02CD /* SavedPlaceViewCell.swift */; };
 		8476E6F21EBA8DDC00B78425 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */; };
 		84CCACF91EBA5CE90007BFE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CCACF81EBA5CE90007BFE6 /* AppDelegate.swift */; };
 		84CCACFE1EBA5CE90007BFE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CCACFC1EBA5CE90007BFE6 /* Main.storyboard */; };
@@ -44,7 +44,7 @@
 		84681FEF1EC3C2AE004F667D /* CustomPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlaceViewController.swift; sourceTree = "<group>"; };
 		847170241EC24ABA00CF0954 /* TweetAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetAnnotation.swift; sourceTree = "<group>"; };
 		8475A73E1EC4E398002B02CD /* SavedPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPlacesViewController.swift; sourceTree = "<group>"; };
-		8475A7401EC4E4CF002B02CD /* SavedPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPlaceViewController.swift; sourceTree = "<group>"; };
+		8475A7401EC4E4CF002B02CD /* SavedPlaceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPlaceViewCell.swift; sourceTree = "<group>"; };
 		8476E6F11EBA8DDC00B78425 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84CCACF51EBA5CE90007BFE6 /* tweetor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweetor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CCACF81EBA5CE90007BFE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			children = (
 				84681FEF1EC3C2AE004F667D /* CustomPlaceViewController.swift */,
 				8475A73E1EC4E398002B02CD /* SavedPlacesViewController.swift */,
-				8475A7401EC4E4CF002B02CD /* SavedPlaceViewController.swift */,
+				8475A7401EC4E4CF002B02CD /* SavedPlaceViewCell.swift */,
 			);
 			name = Places;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8475A7411EC4E4CF002B02CD /* SavedPlaceViewController.swift in Sources */,
+				8475A7411EC4E4CF002B02CD /* SavedPlaceViewCell.swift in Sources */,
 				84ECBC461EBA8387009CED47 /* SearchViewController.swift in Sources */,
 				843437131EBBBA3D00A957C9 /* Tweet.swift in Sources */,
 				84201D9A1EC1149100F04FD6 /* TweetDetailViewController.swift in Sources */,

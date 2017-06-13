@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  tweetor
 //
-//  Created by admin on 03.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import UIKit

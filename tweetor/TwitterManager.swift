@@ -45,4 +45,5 @@ class TwitterManager {
                 })
         }
     }
+    
 }

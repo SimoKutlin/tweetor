@@ -2,21 +2,25 @@
 //  SavedPlaceViewController.swift
 //  tweetor
 //
-//  Created by admin on 11.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import UIKit
 
-class SavedPlaceViewController: UITableViewCell {
+class SavedPlaceViewCell: UITableViewCell {
     
-    // UI Elements
+    // MARK: - UI elements
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var streetLabel: UILabel!
     @IBOutlet weak var zipLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
+    
     var locationData: Location? { didSet { updateGUI() } }
+    
+    
+    // MARK: UI - preparation
     
     func updateGUI() {
         nameLabel.text = locationData?.name
@@ -25,15 +29,8 @@ class SavedPlaceViewController: UITableViewCell {
         cityLabel.text = locationData?.city
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -2,34 +2,43 @@
 //  TweetDetailViewController.swift
 //  tweetor
 //
-//  Created by admin on 08.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import UIKit
 
 class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
-    // UI Elements
+    // MARK: - UI elements
+    
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
     
+    
     var tweetData: Tweet? { didSet { updateUI() } }
+    
+    
+    // MARK: UI - preparation
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fullnameLabel.text = ""
+        usernameLabel.text = ""
+        timestampLabel.text = ""
+        tweetTextLabel.text = ""
+        
         let handler = #selector(TweetDetailViewController.handleTap(gestureRecognizer:))
         let gestureRecognizer: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: handler)
         gestureRecognizer.delegate = self
-        userImage.addGestureRecognizer(gestureRecognizer)
+        usernameLabel.addGestureRecognizer(gestureRecognizer)
         
         self.title = "Tweet"
     }
-
     
     private func updateUI() {
         if let tweet = tweetData, let user = tweet.user {
@@ -45,7 +54,6 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
                 
                 DispatchQueue.main.async {
                     self.userImage?.image = UIImage(data: thumbnailData!)
-                    print("setting!")
                     self.fullnameLabel?.text = user.name
                     self.usernameLabel?.text = "@" + user.username
                     self.timestampLabel?.text = tweet.timestamp
@@ -74,17 +82,18 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
                             mediaView.tag = 8008
                             self.view.addSubview(mediaView)
                         }
-                        
-                    
                     }
                 }
             }
         }
     }
     
-    func handleTap(gestureRecognizer: UILongPressGestureRecognizer) {
-        if let data = tweetData, let user = data.user {
-            UIApplication.shared.open(URL(string: user.profileURL)!, options: [:], completionHandler: nil)
+    
+    // MARK: - UI functionality
+    
+    func handleTap(gestureRecognizer: UITapGestureRecognizer) {
+        if let profileURL = tweetData?.user?.profileURL {
+            UIApplication.shared.open(URL(string: profileURL)!, options: [:], completionHandler: nil)
         }
     }
     
@@ -104,4 +113,5 @@ class TweetDetailViewController: UIViewController, UIGestureRecognizerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }

@@ -2,8 +2,8 @@
 //  Tweet.swift
 //  tweetor
 //
-//  Created by admin on 04.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import Foundation
@@ -64,4 +64,5 @@ final class Tweet: NSObject, ResponseCollectionConvertible, ResponseConvertible 
             longitude = responseData["geo", "coordinates", 1].double!
         }
     }
+    
 }

@@ -2,8 +2,8 @@
 //  PickPlaceViewController.swift
 //  tweetor
 //
-//  Created by admin on 10.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import CoreData
@@ -13,7 +13,8 @@ import UIKit
 
 class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
-    // UI elements
+    // MARK: - UI elements
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var streetLabel: UILabel!
@@ -23,19 +24,52 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
     @IBOutlet weak var toggleFavsButton: UIButton!
     @IBOutlet weak var goSearchButton: UIButton!
     
+    
+    // needed to pass back search location to search controller
     weak var delegate: SearchLocationDelegate? = nil
     
     // location to search at
     private var customLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     
-    // set search location in search controller
+    
+    // MARK: UI - preparation
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameLabel.text = ""
+        streetLabel.text = ""
+        zipLabel.text = ""
+        cityLabel.text = ""
+        
+        toggleFavsButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30)
+        toggleFavsButton.setTitle(String.fontAwesomeIcon(name: .starO), for: .normal)
+        toggleFavsButton.isHidden = true
+        
+        goSearchButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30)
+        goSearchButton.setTitle(String.fontAwesomeIcon(name: .search), for: .normal)
+        goSearchButton.isHidden = true
+        
+        mapView.delegate = self
+        
+        let handler = #selector(CustomPlaceViewController.handleTap(gestureRecognizer:))
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: handler)
+        gestureRecognizer.delegate = self
+        mapView.addGestureRecognizer(gestureRecognizer)
+        
+        self.title = "Pick Location"
+    }
+    
+    
+    // MARK: - UI functionality
+    
     @IBAction func setLocation(_ sender: UIButton) {
+        // set search location in search controller
         delegate?.search(withLocation: self.customLocation, locationType: "custom")
         _  = navigationController?.popViewController(animated: true)
     }
     
-    // core data stuff
     @IBAction func addToFavourites(_ sender: UIButton) {
+        // save picked location to core data
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -62,31 +96,6 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        nameLabel.text = ""
-        streetLabel.text = ""
-        zipLabel.text = ""
-        cityLabel.text = ""
-        
-        toggleFavsButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30)
-        toggleFavsButton.setTitle(String.fontAwesomeIcon(name: .starO), for: .normal)
-        toggleFavsButton.isHidden = true
-        
-        goSearchButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30)
-        goSearchButton.setTitle(String.fontAwesomeIcon(name: .search), for: .normal)
-        goSearchButton.isHidden = true
-
-        self.title = "Pick Location"
-        
-        mapView.delegate = self
-        
-        let handler = #selector(CustomPlaceViewController.handleTap(gestureRecognizer:))
-        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: handler)
-        gestureRecognizer.delegate = self
-        mapView.addGestureRecognizer(gestureRecognizer)
     }
     
     func handleTap(gestureRecognizer: UILongPressGestureRecognizer) {
@@ -128,8 +137,6 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
                 return
             }
         })
-        
-        
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -154,4 +161,5 @@ class CustomPlaceViewController: UIViewController, MKMapViewDelegate, UIGestureR
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }

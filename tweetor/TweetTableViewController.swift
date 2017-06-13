@@ -2,8 +2,8 @@
 //  TweetTableViewController.swift
 //  tweetor
 //
-//  Created by admin on 05.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import UIKit
@@ -13,11 +13,14 @@ class TweetTableViewController: UITableViewController {
     var tweets: [Tweet] = [] {
         didSet {
             tableView.reloadData()
-            print("got \(tweets)")
         }
     }
     
+    // needed to pass search location to further view controller
     weak var delegate: SearchLocationDelegate? = nil
+    
+    
+    // MARK: - UI preparation
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +34,6 @@ class TweetTableViewController: UITableViewController {
     }
 
     
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,6 +79,7 @@ class TweetTableViewController: UITableViewController {
             }
         }
     }
+    
     
     // other stuff xcode gave me
     override func didReceiveMemoryWarning() {

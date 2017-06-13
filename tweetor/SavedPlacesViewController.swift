@@ -2,8 +2,8 @@
 //  SavedPlacesViewController.swift
 //  tweetor
 //
-//  Created by admin on 11.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import CoreData
@@ -14,11 +14,16 @@ class SavedPlacesViewController: UITableViewController {
     
     var favPlaces: [NSManagedObject] = []
     
+    // needed to pass back search location to search controller
     weak var delegate: SearchLocationDelegate? = nil
+    
+    
+    // MARK: - UI preparation
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // fetch saved places from core data
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -42,7 +47,9 @@ class SavedPlacesViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = editButtonItem
     }
 
-    // Tableview datasource stuff
+    
+    // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -54,7 +61,7 @@ class SavedPlacesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SavedPlaceCell", for: indexPath)
         
-        if let cell = cell as? SavedPlaceViewController, let favPlace = favPlaces[indexPath.row] as? Location {
+        if let cell = cell as? SavedPlaceViewCell, let favPlace = favPlaces[indexPath.row] as? Location {
             cell.locationData = favPlace
         }
         
@@ -70,6 +77,7 @@ class SavedPlacesViewController: UITableViewController {
         
     }
     
+    // make table view editable and user be able to delete saved places
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -97,4 +105,5 @@ class SavedPlacesViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }

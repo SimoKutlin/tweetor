@@ -2,8 +2,8 @@
 //  TweetMapViewController.swift
 //  tweetor
 //
-//  Created by admin on 09.05.17.
-//  Copyright © 2017 spp. All rights reserved.
+//  Created by simo.kutlin on 03.05.17.
+//  Copyright © 2017 simo.kutlin All rights reserved.
 //
 
 import MapKit
@@ -11,12 +11,17 @@ import UIKit
 
 class TweetMapViewController: UIViewController, MKMapViewDelegate {
     
+    // MARK: - UI elements
     
     @IBOutlet weak var resultMap: MKMapView!
+    
     
     var tweets: [Tweet] = []
     
     var geoParams: (CLLocationCoordinate2D, Double)?
+    
+    
+    // MARK: - UI preparation
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +47,7 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
             }
             
         }
+        
         self.resultMap.addAnnotations(pins)
         
         self.resultMap.showsUserLocation = true
@@ -53,6 +59,9 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
             self.resultMap.setRegion(zoomRegion, animated: true)
         }
     }
+    
+    
+    // MARK: - UI functionality
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
@@ -72,6 +81,7 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
         
         let detailButton = UIButton(type: .detailDisclosure)
         annotationView?.rightCalloutAccessoryView = detailButton
+        
         let subtitleView = UILabel()
         subtitleView.font = subtitleView.font.withSize(12.0)
         subtitleView.numberOfLines = 0
@@ -85,7 +95,9 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
         performSegue(withIdentifier: "TweetDetailSegue", sender: view.annotation)
     }
     
-    // segueing
+    
+    // MARK: - Navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
@@ -104,9 +116,11 @@ class TweetMapViewController: UIViewController, MKMapViewDelegate {
         self.navigationController!.performSegue(withIdentifier: "BackToResultListSegue", sender: self)
     }
     
+    
     // other stuff xcode gave me
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }
